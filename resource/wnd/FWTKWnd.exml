@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="FWTKWnd" width="640" height="1036" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect width="640" height="1036" x="0" y="0" fillColor="0xFAF9F6"/>
+	<e:Label text="返回" x="35" y="30" size="25" height="25" textColor="0x9C9C9C"/>
+	<e:Label id="lTtitle" text="《用户服务条款》" anchorOffsetX="0" width="640" anchorOffsetY="0" y="0" textColor="0x000000" fontFamily="Microsoft YaHei" x="0" height="70" size="35" textAlign="center" verticalAlign="middle"/>
+	<e:Rect id="rectBack" width="150" height="72" x="0" y="1" fillAlpha="0"/>
+	<e:Scroller width="640" height="880" y="73">
+		<e:Group>
+			<e:Label id="lInfo" text="" anchorOffsetX="0" width="560" anchorOffsetY="0" height="8000" y="0" textColor="0x000000" fontFamily="Microsoft YaHei" size="25" x="40"/>
+		</e:Group>
+	</e:Scroller>
+</e:Skin>

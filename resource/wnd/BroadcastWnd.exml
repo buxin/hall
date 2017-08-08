@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="TopWnd" width="640" height="35" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect id="rectPanel" width="640" height="35" x="0" y="0" anchorOffsetY="0" fillColor="0x000000" fillAlpha="0.5"/>
+	<e:Label id="lSystemInfo" text="sds ds d ds ds " x="640" y="0" anchorOffsetX="0" width="10000" size="20" height="35" verticalAlign="middle" textAlign="left" textColor="0xffffff"/>
+	<e:Image id="laba" x="0" y="0" source="game2_jpg"/>
+</e:Skin>

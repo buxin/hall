@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="PromotionWnd8" width="640" height="1036" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image x="0" y="0" source="promotionBg8_png"/>
+	<e:Label text="返回" x="35" y="30" size="25" height="25" textColor="0x9C9C9C"/>
+	<e:Rect id="rectBack" width="150" height="72" x="0" y="1" fillAlpha="0"/>
+	<e:Label id="lRule" text="" x="40" y="100" anchorOffsetX="0" width="560" anchorOffsetY="0" height="230" textColor="0x939393" textAlign="left" verticalAlign="top"/>
+</e:Skin>

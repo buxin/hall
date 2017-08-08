@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="GameWnd" width="640" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*" xmlns:w="http://ns.egret.com/wing" height="948">
+	<e:Scroller width="640" height="949" x="0" y="0" bounces="false">
+		<e:Group height="948">
+			<ns1:BannerScene width="640" height="187" x="0" y="0"/>
+			<e:Image id="game1" source="imgGame1_png" x="0" y="187"/>
+			<e:Image id="game2" x="0" y="369" source="imgGame3_png"/>
+			<e:Image id="hideImg2" source="game1_png" x="0" y="367" anchorOffsetY="0" height="198" anchorOffsetX="0" width="640" visible="false"/>
+			<e:Image id="game3" x="0" y="564" source="imgGame2_png"/>
+			<e:Image id="hideImg3" x="0" y="564" anchorOffsetY="0" height="198" anchorOffsetX="0" width="640" source="game3_png" visible="false"/>
+		</e:Group>
+	</e:Scroller>
+</e:Skin>

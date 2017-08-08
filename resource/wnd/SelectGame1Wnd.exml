@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SelectGameWnd" width="640" height="1036" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image x="90" y="250" source="selectGameBg1_png"/>
+	<e:Label id="lTIme" text="" x="252" y="382" anchorOffsetX="0" width="119" textColor="0xff9b9b" size="25" height="25" verticalAlign="middle" textAlign="left"/>
+	<e:Label id="lTitle" text="" x="0" anchorOffsetX="0" width="640" size="25" height="25" verticalAlign="middle" textAlign="center" textColor="0x000000" y="300"/>
+	<e:Group id="gSubType" width="300" height="40" x="170" y="485">
+		<e:Image id="text2" source="text2_png" x="15" y="0" scaleX="1" scaleY="1" visible="false"/>
+		<e:Image id="text3" x="16" y="4" scaleX="1" scaleY="1" source="text3_png" visible="false"/>
+		<e:Image id="imgSelect0" source="selectBtn1_png" x="24" y="12" scaleX="1" scaleY="1"/>
+		<e:Image source="selectBtn1_png" x="166" y="11" id="imgSelect1" scaleX="1" scaleY="1"/>
+		<e:Rect id="checkRect0" width="120" height="30" x="17" y="5" fillAlpha="0" scaleX="1" scaleY="1"/>
+		<e:Rect width="120" height="30" x="162" y="5" id="checkRect1" fillAlpha="0" scaleX="1" scaleY="1"/>
+	</e:Group>
+	<e:Image id="yesBtn" source="yesBtn1_png" x="330" y="560"/>
+	<e:Image id="noBtn" source="noBtn1_png" x="136" y="560"/>
+	<e:Rect id="closeRect" width="53" height="50" x="521" y="249" anchorOffsetX="0" anchorOffsetY="0" fillAlpha="0"/>
+	<e:HSlider id="timeSlider" width="324" height="28" x="180" y="434" anchorOffsetX="0" anchorOffsetY="0" skinName="skins.HSliderSkin"/>
+</e:Skin>

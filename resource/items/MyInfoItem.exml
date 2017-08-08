@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="MyInfoItem" width="640" height="100" xmlns:e="http://ns.egret.com/eui">
+	<e:Rect width="640" height="100" x="0" y="0" fillColor="0xFFFFFF"/>
+	<e:Rect width="640" height="1" x="0" y="99" fillColor="0xE8E8E8"/>
+	<e:Image id="icon" width="47" x="24" y="24" height="47"/>
+	<e:Label id="lItemName" text="" x="80" y="37" height="24" size="24" width="200" textAlign="left" verticalAlign="middle" textColor="0x000000" fontFamily="Microsoft YaHei"/>
+	<e:Image source="imgArrow1_png" x="610" y="37"/>
+	<e:Rect id="rectTouch" width="640" height="100" x="0" y="0" fillAlpha="0"/>
+</e:Skin>

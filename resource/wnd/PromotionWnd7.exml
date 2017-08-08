@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="PromotionWnd7" width="640" height="1036" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image x="0" y="0" source="promotionBg7_png"/>
+	<e:Label text="返回" x="35" y="30" size="25" height="25" textColor="0x9C9C9C"/>
+	<e:Rect id="rectBack" width="150" height="72" x="0" y="1" fillAlpha="0"/>
+	<e:Label id="lTime11" text="" x="400" y="102" height="20" size="20" width="200" textAlign="right" verticalAlign="middle" fontFamily="Microsoft YaHei" textColor="0xA4A4A4"/>
+	<e:Label id="lTime12" text="" x="3" y="498" height="20" size="20" width="200" textAlign="center" verticalAlign="middle" fontFamily="Microsoft YaHei" textColor="0xA4A4A4"/>
+	<e:Label id="lTime2" text="" x="222" y="498" height="20" size="20" width="200" textAlign="center" verticalAlign="middle" fontFamily="Microsoft YaHei" textColor="0xA4A4A4"/>
+	<e:Label id="lTime3" text="" x="432" y="498" height="20" size="20" width="200" textAlign="center" verticalAlign="middle" fontFamily="Microsoft YaHei" textColor="0xA4A4A4"/>
+	<e:Label id="lTime4" text="" x="432" y="498" height="20" size="20" width="200" textAlign="center" verticalAlign="middle" fontFamily="Microsoft YaHei" textColor="0xA4A4A4"/>
+	<e:Label id="lCnum" text="" y="318" height="25" size="25" width="200" textAlign="left" verticalAlign="middle" fontFamily="Microsoft YaHei" x="30" textColor="0x000000"/>
+	<e:Label id="lStatus3" text="" y="465" height="25" size="25" width="100" textAlign="left" verticalAlign="middle" fontFamily="Microsoft YaHei" textColor="0x000000" x="500"/>
+	<e:Label id="lBankname" text="" x="400" y="188" height="20" size="20" width="200" textAlign="right" verticalAlign="middle" fontFamily="Microsoft YaHei" textColor="0xA4A4A4"/>
+	<e:Label id="lAccountno" text="" x="200" y="265" height="20" size="20" width="400" textAlign="right" verticalAlign="middle" fontFamily="Microsoft YaHei" textColor="0xA4A4A4"/>
+	<e:Image id="imgStatus1" source="selectBtn1_png" x="75" y="440" visible="false"/>
+	<e:Image id="imgStatus2" source="selectBtn1_png" x="306" y="440" visible="false"/>
+	<e:Image id="imgStatus3" source="selectBtn1_png" x="536" y="440" visible="false"/>
+</e:Skin>

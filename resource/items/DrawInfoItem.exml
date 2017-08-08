@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="DrawInfoItem" width="640" height="54" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect height="2" x="43" y="52" width="554" fillColor="0xffffff"/>
+	<e:Label id="lName" text="" x="54" y="15" size="22" height="22" fontFamily="Microsoft YaHei" width="200" verticalAlign="middle" textAlign="left"/>
+	<e:Label id="lReward" text="" x="450" y="15" size="22" height="22" fontFamily="Microsoft YaHei" width="180" verticalAlign="middle" textAlign="left"/>
+</e:Skin>

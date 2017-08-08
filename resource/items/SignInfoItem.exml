@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SignInfoItem" width="640" height="32" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Label id="lInfo" text="" x="40" y="6" size="20" height="20" fontFamily="Microsoft YaHei" width="500" verticalAlign="middle" textAlign="left" textColor="0x000000"/>
+</e:Skin>

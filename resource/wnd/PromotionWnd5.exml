@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="PromotionWnd5" width="640" height="1036" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image x="0" y="0" source="promotionBg5_png"/>
+	<e:Label text="返回" x="35" y="30" size="25" height="25" textColor="0x9C9C9C"/>
+	<e:Rect id="rectBack" width="150" height="72" x="0" y="1" fillAlpha="0"/>
+	<e:TextInput id="inputCnum" width="446" height="30" x="144" y="99" anchorOffsetX="0" anchorOffsetY="0" skinName="skins.TextInputSkin"/>
+	<e:TextInput id="inputBankname" width="446" height="30" x="144" y="167" anchorOffsetX="0" anchorOffsetY="0" skinName="skins.TextInputSkin"/>
+	<e:TextInput id="inputAccoutno" width="446" height="30" x="144" y="242" anchorOffsetX="0" anchorOffsetY="0" skinName="skins.TextInputSkin"/>
+	<e:TextInput id="inputAccoutname" width="446" height="30" x="144" y="313" anchorOffsetX="0" anchorOffsetY="0" skinName="skins.TextInputSkin"/>
+	<e:Rect id="rectTouch" width="551" height="65" x="46" y="792" anchorOffsetX="0" anchorOffsetY="0" fillAlpha="0"/>
+</e:Skin>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="DiscoveryItem" width="640" height="100" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect width="640" height="100" x="0" y="0" fillColor="0xffffff"/>
+	<e:Rect width="640" height="1" x="0" y="99" fillColor="0xE8E8E8"/>
+	<e:Rect width="640" height="1" x="0" y="0" fillColor="0xE8E8E8"/>
+	<e:Image id="icon" width="47" x="24" y="24" height="47"/>
+	<e:Label id="lItemName" text="" x="80" y="24" height="24" size="24" width="200" textAlign="left" verticalAlign="middle" textColor="0x262626"/>
+	<e:Label id="lItemDesc" text="" x="80" y="51" height="24" size="24" width="350" textColor="0xa4a4a4" verticalAlign="middle" textAlign="left"/>
+	<e:Label id="lItemNews" text="" x="245" y="37" height="24" size="24" textColor="0xA4A4A4" width="350" textAlign="right" verticalAlign="middle"/>
+	<e:Image source="imgArrow1_png" x="610" y="37"/>
+	<e:Rect id="rectTouch" width="640" height="100" x="0" y="0" fillAlpha="0"/>
+</e:Skin>

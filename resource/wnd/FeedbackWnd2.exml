@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="FeedbackWnd2" width="640" height="1036" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image x="0" y="0" source="feedBackBg2_png"/>
+	<e:Rect id="rectFeedback" width="267" height="72" x="194" y="90" anchorOffsetX="0" anchorOffsetY="0" fillAlpha="0"/>
+	<e:Scroller id="scroller" width="640" height="750" x="0" y="190" anchorOffsetX="0" anchorOffsetY="0">
+		<e:Group>
+		<e:List id="dataList" width="640" height="750" x="0" y="0" anchorOffsetX="0" anchorOffsetY="0"/>
+		</e:Group>
+	</e:Scroller>
+</e:Skin>

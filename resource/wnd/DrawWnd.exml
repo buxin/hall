@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="DrawWnd" width="640" height="1036" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect width="640" height="1036" x="0" y="0" fillColor="0xf55756"/>
+	<e:Rect width="640" height="72" x="0" y="0" fillColor="0xffffff"/>
+	<e:Label text="返回" x="35" y="30" size="25" height="25" textColor="0x9c9c9c"/>
+	<e:Label text="抽奖" x="290" y="25" size="30" height="30" textColor="0x000000" fontFamily="Microsoft YaHei"/>
+	<e:Rect id="rectBack" width="150" height="72" x="0" y="1" fillAlpha="0"/>
+	<e:Image source="deco1_png" x="8" y="85"/>
+	<e:Image source="imgDraw1_png" x="232" y="90"/>
+	<e:Image id="imgAvatar" width="66" height="66" x="287" y="180"/>
+	<e:Rect id="rectMask" width="66" height="66" x="287" y="180" ellipseWidth="72" ellipseHeight="72"/>
+	<e:Label id="lName" text="" x="0" y="250" width="640" height="24" textAlign="center" size="24" verticalAlign="middle"/>
+	<e:Image source="drawBoard_png" x="3" y="280"/>
+	<e:Group id="g1" width="633" height="396" x="3" y="280">
+		<e:Image source="redCircle_png" x="11" y="11"/>
+		<e:Image source="blueCircle_png" x="78" y="5"/>
+		<e:Image source="redCircle_png" x="145" y="5"/>
+		<e:Image source="blueCircle_png" x="212" y="5"/>
+		<e:Image source="redCircle_png" x="279" y="5"/>
+		<e:Image source="blueCircle_png" x="346" y="5"/>
+		<e:Image source="redCircle_png" x="413" y="5"/>
+		<e:Image source="blueCircle_png" x="480" y="5"/>
+		<e:Image source="redCircle_png" x="547" y="5"/>
+		<e:Image source="blueCircle_png" x="614" y="11"/>
+		<e:Image source="redCircle_png" x="614" y="79"/>
+		<e:Image source="blueCircle_png" x="614" y="147"/>
+		<e:Image source="redCircle_png" x="614" y="215"/>
+		<e:Image source="blueCircle_png" x="614" y="283"/>
+		<e:Image source="redCircle_png" x="614" y="351"/>
+		<e:Image source="blueCircle_png" x="547" y="369"/>
+		<e:Image source="redCircle_png" x="480" y="369"/>
+		<e:Image source="blueCircle_png" x="413" y="369"/>
+		<e:Image source="redCircle_png" x="346" y="369"/>
+		<e:Image source="blueCircle_png" x="279" y="369"/>
+		<e:Image source="redCircle_png" x="212" y="369"/>
+		<e:Image source="blueCircle_png" x="145" y="369"/>
+		<e:Image source="redCircle_png" x="78" y="369"/>
+		<e:Image source="blueCircle_png" x="11" y="351"/>
+		<e:Image source="redCircle_png" x="11" y="283"/>
+		<e:Image source="blueCircle_png" x="11" y="215"/>
+		<e:Image source="redCircle_png" x="11" y="147"/>
+		<e:Image source="blueCircle_png" x="11" y="79"/>
+	</e:Group>
+	<e:Group id="g2" width="633" height="396" x="3" y="280" visible="false">
+		<e:Image source="redCircle_png" x="11" y="11"/>
+		<e:Image source="blueCircle_png" x="78" y="5"/>
+		<e:Image source="redCircle_png" x="145" y="5"/>
+		<e:Image source="blueCircle_png" x="212" y="5"/>
+		<e:Image source="redCircle_png" x="279" y="5"/>
+		<e:Image source="blueCircle_png" x="346" y="5"/>
+		<e:Image source="redCircle_png" x="413" y="5"/>
+		<e:Image source="blueCircle_png" x="480" y="5"/>
+		<e:Image source="redCircle_png" x="547" y="5"/>
+		<e:Image source="blueCircle_png" x="614" y="11"/>
+		<e:Image source="redCircle_png" x="614" y="79"/>
+		<e:Image source="blueCircle_png" x="614" y="147"/>
+		<e:Image source="redCircle_png" x="614" y="215"/>
+		<e:Image source="blueCircle_png" x="614" y="283"/>
+		<e:Image source="redCircle_png" x="614" y="351"/>
+		<e:Image source="blueCircle_png" x="547" y="369"/>
+		<e:Image source="redCircle_png" x="480" y="369"/>
+		<e:Image source="blueCircle_png" x="413" y="369"/>
+		<e:Image source="redCircle_png" x="346" y="369"/>
+		<e:Image source="blueCircle_png" x="279" y="369"/>
+		<e:Image source="redCircle_png" x="212" y="369"/>
+		<e:Image source="blueCircle_png" x="145" y="369"/>
+		<e:Image source="redCircle_png" x="78" y="369"/>
+		<e:Image source="blueCircle_png" x="11" y="351"/>
+		<e:Image source="redCircle_png" x="11" y="283"/>
+		<e:Image source="blueCircle_png" x="11" y="215"/>
+		<e:Image source="redCircle_png" x="11" y="147"/>
+		<e:Image source="blueCircle_png" x="11" y="79"/>
+	</e:Group>
+	<e:Group id="gDraw" width="285" height="112" x="318" y="475" anchorOffsetX="142" anchorOffsetY="56">
+		<e:Image id="btnDraw" source="btnDraw_png" x="0" y="0" scaleX="1" scaleY="1"/>
+		<e:Label id="lDrawPrice" text="" x="0" y="69" width="285" size="25" height="25" textAlign="center" fontFamily="Microsoft YaHei" verticalAlign="middle"/>
+		<e:Rect id="rectDraw" width="285" height="112" x="0" y="0" fillAlpha="0"/>
+	</e:Group>
+	<e:Scroller id="scroller" width="640" height="270" x="0" y="680">
+		<e:Group>
+		<e:List id="dataList" width="640" height="270" x="0" y="0" anchorOffsetX="0" anchorOffsetY="0" scaleX="1" scaleY="1"/>
+		</e:Group>
+	</e:Scroller>
+</e:Skin>

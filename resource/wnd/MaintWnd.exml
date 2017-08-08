@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="MaintWnd" width="640" height="1036" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image id="maintBg" source="maintImg_png" x="0" y="0"/>
+	<e:Label text="服务器维护中..." x="167.5" y="303" anchorOffsetX="0" width="305" anchorOffsetY="0" height="59" textColor="0x000000" verticalAlign="middle" fontFamily="Microsoft YaHei" bold="true" size="40"/>
+	<e:Label id="TimeLable" text="24:00开放，敬请稍候" x="167.5" y="351" anchorOffsetX="0" width="305" anchorOffsetY="0" height="59" textColor="0x000000" verticalAlign="middle" fontFamily="Microsoft YaHei" size="30" bold="true"/>
+</e:Skin>

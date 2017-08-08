@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="PromotionWnd6" width="640" height="1036" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect width="640" height="1036" x="0" y="0" fillAlpha="1" fillColor="0xfaf9f6"/>
+	<e:Rect width="640" height="75" x="0" y="0" fillAlpha="1" fillColor="0xffffff"/>
+	<e:Label text="返回" x="35" y="30" size="25" height="25" textColor="0x9C9C9C"/>
+	<e:Rect id="rectBack" width="150" height="72" x="0" y="1" fillAlpha="0"/>
+	<e:Rect width="640" height="2" x="0" y="74" fillAlpha="1" fillColor="0xdddddd"/>
+	<e:Image source="text1_png" x="263" y="25"/>
+	<e:Scroller id="scroller" width="640" height="848" x="0" y="76">
+		<e:Group>
+		<e:List id="dataList" width="640" height="848" x="0" y="0" anchorOffsetX="0" anchorOffsetY="0" scaleX="1" scaleY="1"/>
+		</e:Group>
+	</e:Scroller>
+</e:Skin>

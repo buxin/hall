@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="MyInfoWnd" width="640" height="1036" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect width="640" height="1036" x="0" y="0" fillColor="0xfaf9f6"/>
+	<e:Scroller id="scroller" width="640" height="848" x="0" y="110.8">
+		<e:Group>
+		<e:List id="dataList" width="640" height="848" x="0" y="0" anchorOffsetX="0" anchorOffsetY="0" scaleX="1" scaleY="1"/>
+		</e:Group>
+	</e:Scroller>
+</e:Skin>

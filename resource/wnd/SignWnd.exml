@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SignWnd" width="640" height="1036" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect id="touchRect" width="640" height="1036" x="0" y="0" fillAlpha="0.5"/>
+	<e:Image source="signBg_png" x="150" y="240"/>
+	<e:Image id="yesBtn2" source="yesBtn2_png" x="170" y="560"/>
+	<e:Image id="yesBtn3" source="yesBtn3_png" x="170" y="560"/>
+	<e:Label id="lSignReward" text="" x="225" y="310" height="60" anchorOffsetX="0" width="200" textColor="0xff6d6d" size="60" textAlign="center" verticalAlign="middle"/>
+	<e:Label id="lSignDays" text="" x="225" y="448" height="60" anchorOffsetX="0" width="200" size="30" textAlign="center" verticalAlign="middle" textColor="0xffffff"/>
+</e:Skin>

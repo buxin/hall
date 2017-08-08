@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SignDetailWnd" width="640" height="1036" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image source="signBg2_png" x="0" y="0"/>
+	<e:Group id="g1" width="159" height="99" x="0" y="73" visible="false">
+		<e:Rect width="159" height="98" x="0" y="0" scaleX="1" scaleY="1" fillColor="0xeff9f0" strokeAlpha="0"/>
+		<e:Image source="imgSignStamp_png" x="57" y="13"/>
+	</e:Group>
+	<e:Group id="g2" width="158" height="100" x="161" y="73" visible="false">
+		<e:Rect width="158" height="98" x="0" y="0" scaleX="1" scaleY="1" fillColor="0xEFF9F0" strokeAlpha="0"/>
+		<e:Image source="imgSignStamp_png" x="57" y="13"/>
+	</e:Group>
+	<e:Group id="g3" width="159" height="100" x="320" y="73" visible="false">
+		<e:Rect width="159" height="98" x="0" y="0" scaleX="1" scaleY="1" fillColor="0xEFF9F0" strokeAlpha="0"/>
+		<e:Image source="imgSignStamp_png" x="57" y="13"/>
+	</e:Group>
+	<e:Group id="g4" width="159" height="100" x="480" y="74" visible="false">
+		<e:Rect width="159" height="98" x="0" y="0" scaleX="1" scaleY="1" fillColor="0xEFF9F0" strokeAlpha="0"/>
+		<e:Image source="imgSignStamp_png" x="57" y="13"/>
+	</e:Group>
+	<e:Group id="g5" width="159" height="100" x="0" y="175" visible="false">
+		<e:Rect width="160" height="100" x="0" y="0" scaleX="1" scaleY="1" fillColor="0xEFF9F0" strokeAlpha="0"/>
+		<e:Image source="imgSignStamp_png" x="58" y="15"/>
+	</e:Group>
+	<e:Group id="g6" width="158" height="100" x="161" y="175" visible="false">
+		<e:Rect width="158" height="100" x="0" y="0" scaleX="1" scaleY="1" fillColor="0xEFF9F0" strokeAlpha="0"/>
+		<e:Image source="imgSignStamp_png" x="57" y="15"/>
+	</e:Group>
+	<e:Group id="g7" width="320" height="100" x="320" y="175" visible="false">
+		<e:Rect width="320" height="100" x="0" y="0" scaleX="1" scaleY="1" fillColor="0xEFF9F0" strokeAlpha="0"/>
+		<e:Image source="imgSignStamp_png" x="217" y="17"/>
+	</e:Group>
+	<e:Label id="lDate1" text="" x="20" y="83" textColor="0xa4d5a7" size="22" height="22" width="60"/>
+	<e:Label id="lDate2" text="" x="181" y="83" textColor="0xA4D5A7" size="22" height="22" width="60"/>
+	<e:Label id="lDate3" text="" x="340" y="83" textColor="0xA4D5A7" size="22" height="22" width="60"/>
+	<e:Label id="lDate4" text="" x="500" y="83" textColor="0xA4D5A7" size="22" height="22" width="60"/>
+	<e:Label id="lDate5" text="" x="20" y="185" textColor="0xA4D5A7" size="22" height="22" width="60"/>
+	<e:Label id="lDate6" text="" x="181" y="185" textColor="0xA4D5A7" size="22" height="22" width="60"/>
+	<e:Label id="lDate7" text="" x="340" y="185" textColor="0xA4D5A7" size="22" height="22" width="60"/>
+	<e:Scroller id="scroller" width="640" height="320" x="0" y="355">
+		<e:Group height="320">
+		<e:List id="dataList" width="640" height="320" x="0" y="0" anchorOffsetX="0" anchorOffsetY="0" scaleX="1" scaleY="1"/>
+		</e:Group>
+	</e:Scroller>
+	<e:Label id="lSignNum" text="" x="175" y="303" anchorOffsetX="0" width="300" textColor="0x000000" size="20" height="20"/>
+	<e:Rect id="rectRefresh" width="102" height="43" x="523" y="17" anchorOffsetX="0" anchorOffsetY="0" fillAlpha="0"/>
+</e:Skin>

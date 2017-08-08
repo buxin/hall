@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="PromotionWnd9" width="640" height="1036" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image x="0" y="0" source="promotionBg9_png"/>
+	<e:Label text="返回" x="35" y="30" size="25" height="25" textColor="0x9C9C9C"/>
+	<e:Rect id="rectBack" width="150" height="72" x="0" y="1" fillAlpha="0"/>
+	<e:Image id="Tijiaobnt" source="tijiaoBtn_png" x="40" y="814"/>
+	<e:Image id="Rightbnt" source="right_png" x="509" y="180"/>
+	<e:Image id="Leftbnt" source="left_png" x="70" y="180"/>
+	<e:Label id="zongjin" text="239.10元" x="179" y="185" anchorOffsetX="0" width="288" anchorOffsetY="0" height="39" size="35" verticalAlign="middle" textAlign="center" textColor="0x000000" bold="true" fontFamily="Microsoft YaHei"/>
+	<e:Label id="riqi" text="2017.02" x="179" y="230" anchorOffsetX="0" width="288" anchorOffsetY="0" height="18" size="17" verticalAlign="middle" textAlign="center" bold="true" fontFamily="Microsoft YaHei" textColor="0xd1caca"/>
+	<e:Label id="yuefen" text="2月明细" x="249" y="299" anchorOffsetX="0" width="151" verticalAlign="middle" textAlign="center" textColor="0x000000" size="25" height="30" fontFamily="Microsoft YaHei" bold="true"/>
+	<e:Scroller id="scroller" width="640" height="448" x="0" y="350">
+		<e:Group>
+		<e:List id="dataList1" width="640" height="448" x="0" y="0" anchorOffsetX="0" anchorOffsetY="0" scaleX="1" scaleY="1"/>
+		</e:Group>
+	</e:Scroller>
+	
+</e:Skin>

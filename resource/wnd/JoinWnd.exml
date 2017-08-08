@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="JoinWnd" width="640" height="1036" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image source="joinBg_png" x="0" y="0"/>
+	<e:TextInput id="inputName" width="446" height="30" x="144" y="115" anchorOffsetX="0" anchorOffsetY="0" skinName="skins.TextInputSkin"/>
+	<e:TextInput id="inputPhone" width="446" height="30" x="144" y="195" anchorOffsetX="0" anchorOffsetY="0" skinName="skins.TextInputSkin"/>
+	<e:TextInput id="inputArea" width="446" height="30" x="144" y="274" anchorOffsetX="0" anchorOffsetY="0" skinName="skins.TextInputSkin"/>
+	<e:TextInput id="inputExplanation" width="446" height="165" x="144" y="379" anchorOffsetX="0" anchorOffsetY="0" skinName="skins.TextInputSkin"/>
+	<e:Rect id="rectTouch" width="551" height="65" x="46" y="776" anchorOffsetX="0" anchorOffsetY="0" fillAlpha="0"/>
+</e:Skin>

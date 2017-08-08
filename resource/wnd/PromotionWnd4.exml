@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="PromotionWnd4" width="640" height="1036" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image x="0" y="0" source="promotionBg4_png"/>
+	<e:Label text="返回" x="35" y="30" size="25" height="25" textColor="0x9C9C9C"/>
+	<e:Label text="生成二维码" x="491" y="104" size="25" height="25" textColor="0x9C9C9C"/>
+	<e:Rect id="rectBack" width="150" height="72" x="0" y="1" fillAlpha="0"/>
+	<e:Label id="lgname" text="" x="135" y="104" anchorOffsetX="0" width="480" anchorOffsetY="0" height="25" textAlign="left" verticalAlign="top" size="25" textColor="0x000000"/>
+	<e:Rect id="rectCreateQr" width="200" height="72" x="440" y="74" fillAlpha="0"/>
+	<e:Label id="lincome" text="" x="0" y="254" anchorOffsetX="0" width="640" anchorOffsetY="0" height="40" textColor="0x000000" textAlign="center" verticalAlign="top" size="40"/>
+	<e:Label id="ltip" text="" x="41" y="333" anchorOffsetX="0" width="560" anchorOffsetY="0" height="40" textAlign="center" verticalAlign="top" size="40" textColor="0xffffff"/>
+	<e:Rect id="btnWithDraw" width="551" height="65" x="46" y="321" anchorOffsetX="0" anchorOffsetY="0" fillAlpha="0"/>
+	<e:Rect id="btnTellFriend" width="634" height="71" x="1" y="147" anchorOffsetX="0" anchorOffsetY="0" fillAlpha="0"/>
+	<e:Rect id="btnWithDrawRecord" width="150" height="50" x="71" y="404" anchorOffsetX="0" anchorOffsetY="0" fillAlpha="0"/>
+	<e:Rect id="btnWithDrawRule" width="150" height="50" x="243" y="404" anchorOffsetX="0" anchorOffsetY="0" fillAlpha="0"/>
+	<e:Image id="goto9" source="btnSign_png" x="423" y="404" anchorOffsetX="0" width="128" alpha="0"/>
+	
+</e:Skin>

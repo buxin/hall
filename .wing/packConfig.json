@@ -1,0 +1,10 @@
+{
+    "maxImageWidth": 2014,
+    "maxImageHeight": 2014,
+    "defaultResPath": "f:\\miniGames\\egret2dWorkspace\\wuxia\\wuxia\\resource\\default.res.json",
+    "packGroups": {
+        "preload": true,
+        "beforePreload": false,
+        "ani": false
+    }
+}

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="FeedbackWnd1" width="640" height="1036" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image x="0" y="0" source="feedBackBg1_png"/>
+	<e:Rect id="rectShowList1" width="267" height="72" x="194" y="532" anchorOffsetX="0" anchorOffsetY="0" fillAlpha="0"/>
+	<e:Rect id="rectShowList" width="123" height="48" x="473" y="10" anchorOffsetX="0" anchorOffsetY="0" fillAlpha="0"/>
+</e:Skin>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="DrawRewardItem" width="140" height="114" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image source="imgDrawGrid_png" x="1" y="1"/>
+	<e:Group id="gReward" width="140" height="114" x="0" y="0">
+		<e:Image source="imgDiamond_png" x="59" y="26" scaleX="1" scaleY="1"/>
+		<e:Label id="lDiamondNum" text="" x="0" y="56" width="140" height="25" size="25" textColor="0xd62342" fontFamily="Microsoft YaHei" textAlign="center" verticalAlign="middle"/>
+	</e:Group>
+	<e:Group id="gNoReward" width="140" height="114" x="0" y="0">
+		<e:Image source="imgGoodyBag_png" x="36" y="22"/>
+	</e:Group>
+	<e:Rect id="rectSelect" width="140" height="114" x="0" y="0" fillAlpha="0" strokeColor="0xffd803" strokeWeight="10"/>
+</e:Skin>

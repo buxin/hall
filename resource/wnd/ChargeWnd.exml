@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ChargeWnd" width="640" height="1036" xmlns:e="http://ns.egret.com/eui">
+	<e:Rect width="640" height="1036" x="0" y="0" fillColor="0xffffff"/>
+	<e:Label text="在线充值" x="260" y="24" textColor="0x000000" fontFamily="Microsoft YaHei"/>
+    <e:Scroller id="scroller" width="640" height="966" x="0" y="70" anchorOffsetX="0" anchorOffsetY="0">
+		<e:Group>
+			<e:List id="dataList" width="640" height="966" x="0" y="0" anchorOffsetX="0" anchorOffsetY="0"/>
+		</e:Group>
+	</e:Scroller>
+</e:Skin>

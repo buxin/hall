@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="BottomWnd" width="640" height="94" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image source="bottomBg_png" x="0" y="0"/>
+	<e:Image id="btnCharge1" source="btnCharge1_png" x="40" y="24"/>
+	<e:Image id="btnCharge2" source="btnCharge2_png" x="42" y="29"/>
+	<e:Image id="btnExploit1" source="btnExploit1_png" x="162" y="23"/>
+	<e:Image id="btnExploit2" source="btnExploit2_png" x="163" y="29"/>
+	<e:Image id="btnHall1" source="btnHall1_png" x="300" y="17"/>
+	<e:Image id="btnHall2" source="btnHall2_png" x="298" y="7"/>
+	<e:Image id="btnDiscovery1" source="btnDiscovery1_png" x="440" y="23"/>
+	<e:Image id="btnDiscovery2" source="btnDiscovery2_png" x="443" y="27"/>
+	<e:Image id="btnMyInfo1" source="btnMyInfo1_png" x="560" y="24"/>
+	<e:Image id="btnMyInfo2" source="btnMyInfo2_png" x="562" y="29"/>
+	<e:Rect id="rectCharge" width="78" height="72" x="22" y="18" anchorOffsetX="0" anchorOffsetY="0" fillAlpha="0"/>
+	<e:Rect id="rectExploit" width="78" height="72" x="142" y="18" anchorOffsetX="0" anchorOffsetY="0" fillAlpha="0"/>
+	<e:Rect id="rectHall" width="78" height="82" x="281" y="6" anchorOffsetX="0" anchorOffsetY="0" fillAlpha="0"/>
+	<e:Rect id="rectDiscovery" width="78" height="72" x="422" y="18" anchorOffsetX="0" anchorOffsetY="0" fillAlpha="0"/>
+	<e:Rect id="rectMyInfo" width="78" height="72" x="539" y="18" anchorOffsetX="0" anchorOffsetY="0" fillAlpha="0"/>
+</e:Skin>
