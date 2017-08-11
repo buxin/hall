@@ -93,6 +93,6 @@ class SignDetailScene extends WinBase{
 	//刷新
 	private HandleRefreshClick(e:egret.TouchEvent):void
 	{
-		//提交刷新接口，也可以做一个假刷新
+		
 	}
 }

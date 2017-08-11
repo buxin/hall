@@ -15,6 +15,9 @@ var Protocol = (function (_super) {
     __extends(Protocol, _super);
     function Protocol(dataManager) {
         var _this = _super.call(this) || this;
+        //游戏服相关
+        //public gameweb:string = "";
+        _this.serverInfo = new ServerInfo();
         _this.isOurServer = false;
         _this.jumpGametypeId = 0;
         _this.jumpRoomKey = "28155fbfd0e84feb9b5ee89be0225036";
@@ -33,7 +36,7 @@ var Protocol = (function (_super) {
         //维护
         _this.isMaint = false;
         //上传图片
-        _this.photoPathPrefix = "http://www.amo9.com/photos/naliqu/";
+        _this.photoPathPrefix = "http://www.naliqu.net/photos/naliqu/";
         //获取二维码路径
         _this.qrPathPrefix = _this.urlPrefix + "qrimg/";
         _this.dataManager = dataManager;
@@ -58,11 +61,18 @@ var Protocol = (function (_super) {
             }
             if (MyUtils.checkStringIsNotNulll(MyUtils.getMyParamer("ghtid")))
                 _this.dataManager.MyPlayer.ghtid = Number(MyUtils.getMyParamer("ghtid"));
+            //充值跳转回游戏地址
+            // if(MyUtils.checkStringIsNotNulll(MyUtils.getMyParamer("gameweb")))
+            //  this.gameweb = decodeURIComponent(MyUtils.getMyParamer("gameweb"));
+            if (MyUtils.checkStringIsNotNulll(MyUtils.getMyParamer("gameweb"))) {
+                var url = document.location.search;
+                _this.serverInfo.analysis(url);
+            }
             // if(MyUtils.checkStringIsNotNulll(MyUtils.getMyParamer("gname")))
             //      this.dataManager.MyPlayer.EncodeGname = MyUtils.getMyParamer("gname");
             //   egret.log("gametype "+this.jumpGametypeId )
             if (_this.isOurServer) {
-                _this.urlPrefix = "http://www.amo9.com/games/mar/naliqu/hall/";
+                _this.urlPrefix = "";
             }
             else {
                 _this.urlPrefix = "http://www.naliqu.net/hall/";
@@ -70,7 +80,7 @@ var Protocol = (function (_super) {
         }
         else {
             // this.urlPrefix = "http://192.168.1.54:8080/hall/";
-            _this.urlPrefix = "http://test.naliqu.net/hall/";
+            _this.urlPrefix = "http://120.27.209.57:8081/hall/";
         }
         //this.shareOpenId = "123131";
         _this.qrPathPrefix = _this.urlPrefix + "qrimg/";
@@ -82,7 +92,7 @@ var Protocol = (function (_super) {
         var _this = this;
         var url = this.urlPrefix + "checkin.do?openid=" + this.dataManager.MyPlayer.OpenId + "&nick=" + this.dataManager.MyPlayer.Name
             + "&headimg=" + this.dataManager.MyPlayer.Avatar + "&sex=" + this.dataManager.MyPlayer.Sex;
-        console.log("enter-->" + url);
+        console.log(url);
         var urlloader = new egret.URLLoader();
         var req = new egret.URLRequest(url);
         req.method = egret.URLRequestMethod.GET;
@@ -111,7 +121,7 @@ var Protocol = (function (_super) {
         req.method = egret.URLRequestMethod.GET;
         var self = this;
         urlloader.addEventListener(egret.Event.COMPLETE, function (e) {
-            console.log("登陆返回-->" + e.target.data);
+            console.log(e.target.data);
             //    egret.log(e.target.data);
             var ret = e.target.data;
             if (MyUtils.checkStringIsNotNulll(ret)) {
@@ -126,6 +136,8 @@ var Protocol = (function (_super) {
                     _this.dataManager.MyPlayer.income = (Number(jsObj.income)) / 100;
                     _this.dataManager.MyPlayer.qrPath = jsObj.qrpath;
                     _this.dataManager.MyPlayer.roles = Number(jsObj.roles);
+                    _this.dataManager.MyPlayer.Packstype1 = Number(jsObj.packstype1);
+                    _this.dataManager.MyPlayer.PackLeftTime = Number(jsObj.packLeftTime);
                     // //如果链接带过来ghtid,gname,则不更新login.do返回的ghtid,gname
                     // if(this.dataManager.MyPlayer.ghtid<=0)
                     {
@@ -141,6 +153,7 @@ var Protocol = (function (_super) {
                     _this.dataManager.SystemData.maintendtime = jsObj.sc.maintendtime;
                     _this.dataManager.SystemData.commission = jsObj.sc.commission;
                     _this.dataManager.SystemData.ChargeData = jsObj.sc.chargeList;
+                    _this.dataManager.SystemData.PackData = jsObj.sc.packList;
                     //游戏数据
                     _this.dataManager.SystemData.gameInfoList = [];
                     var jsObjArr = jsObj.sc.gameInfoList;
@@ -423,13 +436,13 @@ var Protocol = (function (_super) {
         var _this = this;
         this.dataManager.SystemData.Inform = "";
         var url = this.urlPrefix + "heartbeat.do?key=" + this.dataManager.MyPlayer.Key;
-        console.log(url);
+        //console.log(url)
         var urlloader = new egret.URLLoader();
         var req = new egret.URLRequest(url);
         req.method = egret.URLRequestMethod.GET;
         var self = this;
         urlloader.addEventListener(egret.Event.COMPLETE, function (e) {
-            console.log(e.target.data);
+            //console.log(e.target.data);
             var ret = e.target.data;
             //{"serverTime":1492188818836,"broadcastInfoClient":{"inform":"栋栋陪我去北京吧","interval":3}} 
             if (MyUtils.checkStringIsNotNulll(ret)) {
@@ -440,6 +453,8 @@ var Protocol = (function (_super) {
                     _this.dataManager.SystemData.maintweekdays = jsObj.maintweekdays;
                     _this.dataManager.SystemData.maintstarttime = jsObj.maintstarttime;
                     _this.dataManager.SystemData.maintendtime = jsObj.maintendtime;
+                    // this.dataManager.MyPlayer.packstype1 = Number(jsObj.packstype1);
+                    // this.dataManager.MyPlayer.packLeftTime = Number(jsObj.packLeftTime);
                     _this.isMaint = Boolean(jsObj.maint);
                     var event = new egret.Event("Onheartbeat");
                     _this.dispatchEvent(event);
@@ -538,7 +553,7 @@ var Protocol = (function (_super) {
     //上传图片
     Protocol.prototype.onUpload = function (photoBase64) {
         var _this = this;
-        var url = "http://www.amo9.com/wxsdk/upload.do";
+        var url = "http://www.naliqu.net/wxsdk/upload.do";
         var urlloader = new egret.URLLoader();
         var req = new egret.URLRequest(url);
         req.method = egret.URLRequestMethod.POST;
@@ -672,6 +687,9 @@ var Protocol = (function (_super) {
         var _this = this;
         this.gameurl = "";
         var url = this.urlPrefix + "playinfo.do?key=" + this.dataManager.MyPlayer.Key;
+        if (MyUtils.checkStringIsNotNulll(WndManager.root.main.protocol.serverInfo.gameweb))
+            url = this.urlPrefix + "playinfo.do?key=" + this.dataManager.MyPlayer.Key + "&ip=" + this.serverInfo.ip
+                + "&port=" + this.serverInfo.port + "&gametype=" + this.serverInfo.gametype + "&roomkey=" + this.serverInfo.roomkey;
         console.log(url);
         var urlloader = new egret.URLLoader();
         var req = new egret.URLRequest(url);
@@ -683,7 +701,12 @@ var Protocol = (function (_super) {
             if (MyUtils.checkStringIsNotNulll(ret)) {
                 var jsObj = JSON.parse(e.target.data);
                 if (jsObj) {
-                    _this.dataManager.MyPlayer.DiamondNum = Number(jsObj.jewel);
+                    var newDiamonNum = Number(jsObj.jewel);
+                    if (_this.dataManager.MyPlayer.DiamondNum < newDiamonNum) {
+                        var event = new egret.Event("aftercharge");
+                        self.dispatchEvent(event);
+                    }
+                    _this.dataManager.MyPlayer.DiamondNum = newDiamonNum;
                     var event = new egret.Event("onzuanshiNum");
                     self.dispatchEvent(event);
                 }
@@ -741,6 +764,28 @@ var Protocol = (function (_super) {
             var ret = e.target.data;
             if (MyUtils.checkStringIsNotNulll(ret)) {
                 var event = new egret.Event("onGetChargeAddr", true, false, ret);
+                _this.dispatchEvent(event);
+            }
+        }, this);
+        urlloader.load(req);
+    };
+    //购买商品
+    Protocol.prototype.shopping = function (goodsid) {
+        var _this = this;
+        var url = this.urlPrefix + "shopping.do?key=" + this.dataManager.MyPlayer.Key + "&goodsid=" + goodsid + "&num=1";
+        if (MyUtils.checkStringIsNotNulll(WndManager.root.main.protocol.serverInfo.gameweb))
+            url = this.urlPrefix + "shopping.do?key=" + this.dataManager.MyPlayer.Key + "&goodsid=" + goodsid + "&num=1" + "&ip=" + this.serverInfo.ip
+                + "&port=" + this.serverInfo.port + "&gametype=" + this.serverInfo.gametype + "&roomkey=" + this.serverInfo.roomkey;
+        console.log(url);
+        var urlloader = new egret.URLLoader();
+        var req = new egret.URLRequest(url);
+        req.method = egret.URLRequestMethod.GET;
+        var self = this;
+        urlloader.addEventListener(egret.Event.COMPLETE, function (e) {
+            console.log(e.target.data, "33");
+            var ret = e.target.data;
+            if (MyUtils.checkStringIsNotNulll(ret)) {
+                var event = new egret.Event("onShopping", true, false, ret);
                 _this.dispatchEvent(event);
             }
         }, this);

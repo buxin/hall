@@ -35,6 +35,8 @@
 		private bottomScene:BottomScene;
 		private timer: egret.Timer= null;
 
+		private timerUpdate:egret.Timer = null;
+
 		public constructor(main:Main) {
 			super();
 			this.main = main;
@@ -76,6 +78,10 @@
 			if(WndManager.root.main.protocol.defaultPage==1){
 				this.openExploitSubScene(null);
 			}
+			else if(WndManager.root.main.protocol.defaultPage==0)
+			{
+				this.openChargeScene(null);
+			}
 
 			this.requestBc();
 						WndManager.root.main.protocol.getSignInfo();
@@ -97,6 +103,10 @@
 			this.timer = new egret.Timer(10000, -1);
 			this.timer.addEventListener(egret.TimerEvent.TIMER, this.timerFunc, this);//启动时间
 			this.timer.start();
+
+			this.timerUpdate = new egret.Timer(1000, -1);
+			this.timerUpdate.addEventListener(egret.TimerEvent.TIMER, this.timerUpdateFunc, this);//启动时间
+			this.timerUpdate.start();
 		}
 		private Onheartbeat(){
 			if(this.bottomScene.selectId==2){
@@ -115,6 +125,29 @@
 		private timerFunc(){
 			WndManager.root.main.protocol.heartbeat();
 		}
+
+
+		private timerUpdateFunc(){
+			var cs:ChargeScene = WndManager.getWnd(ChargeScene) as ChargeScene;
+			if(null != cs){
+				cs.updateData();
+			}
+
+			var mi:MyInfoScene = WndManager.getWnd(MyInfoScene) as MyInfoScene;
+			if(null != mi){
+				mi.updateData();
+			}
+		}
+
+		public afterCharge():void
+		{
+			egret.log("更新钻石");
+			var cs:ChargeScene = WndManager.getWnd(ChargeScene) as ChargeScene;
+			if(null != cs){
+				cs.afterCharge();
+			}
+		}
+
 		private initLogo():void
 		{
 			this.logoImg = new eui.Image(RES.getRes("logo_png"));
@@ -209,6 +242,8 @@
 	
 			// this.addEventListener("onNewRoom",this.onNewRoom,this);
 			this.main.protocol.addEventListener("onNewRoom",this.onNewRoom,this);
+
+			WndManager.root.main.protocol.addEventListener("aftercharge", this.afterCharge, this);
 		}
 
 
@@ -259,7 +294,7 @@
 					var port:string = jsObj.port;
 					var roomKey:string = jsObj.roomkey;
 					var path:string = jsObj.path;
-					var gameurl:string = jsObj.gameurl;
+					var gameurl:string = "http://192.168.8.125:3001/index.html"//jsObj.gameurl;
 
 					if(WndManager.root.main.protocol.dataManager.MyPlayer.ghtid>0){
 					window.location.href=gameurl+"?ip="+ip+"&port="+port  +"&path="+path + "&roomkey="+roomKey+"&key="+WndManager.root.main.dataManager.MyPlayer.Key+
@@ -277,6 +312,11 @@
                 }
 			}
 
+		}
+
+		public backGame():void
+		{
+			window.location.href = WndManager.root.main.protocol.serverInfo.gameweb;	
 		}
 
 		//打开我的信息窗口

@@ -58,7 +58,6 @@ var SignDetailScene = (function (_super) {
     };
     //刷新
     SignDetailScene.prototype.HandleRefreshClick = function (e) {
-        //提交刷新接口，也可以做一个假刷新
     };
     return SignDetailScene;
 }(WinBase));

@@ -114,10 +114,10 @@ class JSSDK extends egret.DisplayObjectContainer {
         if(this.protocol.isOurServer)
         {
             if(this.protocol.dataManager.MyPlayer.ghtid>0)
-            this.link = "http://www.amo9.com/games/mar/naliqu/hall/oauth2.do?ghtid="+this.protocol.dataManager.MyPlayer.ghtid;
+            this.link = "";
                     //+"&gname="+this.protocol.dataManager.MyPlayer.EncodeGname;
             else
-            this.link = "http://www.amo9.com/games/mar/naliqu/hall/oauth2.do";
+            this.link = "";
         }
         else
         {
@@ -141,7 +141,7 @@ class JSSDK extends egret.DisplayObjectContainer {
 
         if(this.protocol.isOurServer)
         {
-             this.url = "http://www.amo9.com/jssdk/sign.do?url=" + encodeURIComponent(location.href.split("#")[0]);
+             this.url = "";
         }
         else
         {

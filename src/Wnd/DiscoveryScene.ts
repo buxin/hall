@@ -2,6 +2,8 @@ class DiscoveryScene extends WinBase{
 
 	private scroller: eui.Scroller;
 	private dataList: eui.List;
+	private scroller1: eui.Scroller;
+	private dataList1: eui.List;
 
 	private drawScene:DrawScene;
 
@@ -26,6 +28,13 @@ class DiscoveryScene extends WinBase{
 
 		this.scroller.viewport = this.dataList;
 
+		this.scroller1.scrollPolicyH = eui.ScrollPolicy.OFF;
+
+		this.dataList1.dataProvider = new eui.ArrayCollection(WndManager.root.main.dataManager.SystemData.PKData);
+		this.dataList1.itemRenderer = PKItemRender;
+
+		this.scroller1.viewport = this.dataList1;
+
 		this.drawScene = new DrawScene(this);
 		this.drawScene.visible = false;
 		this.addChild(this.drawScene);
@@ -47,5 +56,6 @@ class DiscoveryScene extends WinBase{
 
 	public agindis(){
 		this.dataList.dataProvider = new eui.ArrayCollection(WndManager.root.main.dataManager.SystemData.DiscoveryData);
+		this.dataList1.dataProvider = new eui.ArrayCollection(WndManager.root.main.dataManager.SystemData.PKData);
 	}
 }

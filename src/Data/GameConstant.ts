@@ -22,9 +22,16 @@ class GameConstant {
 	public static ITEM_DRAW:number = 2;
 	public static ITEM_EXP_SHARE:number = 3;
 
+	public static PK_NAME:string = "比赛场";
+	public static PK_SUB_NAME:Array<string> = ["清12混8","清10混8"];
+
 	//顶框ui布局
 	public static TOPSCENE_LAYOUT_HALL:number = 1;
 	public static TOPSCENE_LAYOUT_MYINFO:number = 2;
+
+	//玩家信息框布局
+	public static PLAYER_INFO_SCENE_LAYOUT_MYINFO:number = 3;
+	public static PLAYER_INFO_SCENE_LAYOUT_CHARGE:number = 4;
 
 	//推广信息
 	public static PROMOTION_STATUS_SUBMIT:number = 1;//提交

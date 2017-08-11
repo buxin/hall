@@ -20,9 +20,14 @@ GameConstant.GAME_SIGN_DURATION = 7; //签到周期时长
 GameConstant.ITEM_SIGN = 1;
 GameConstant.ITEM_DRAW = 2;
 GameConstant.ITEM_EXP_SHARE = 3;
+GameConstant.PK_NAME = "比赛场";
+GameConstant.PK_SUB_NAME = ["清12混8", "清10混8"];
 //顶框ui布局
 GameConstant.TOPSCENE_LAYOUT_HALL = 1;
 GameConstant.TOPSCENE_LAYOUT_MYINFO = 2;
+//玩家信息框布局
+GameConstant.PLAYER_INFO_SCENE_LAYOUT_MYINFO = 3;
+GameConstant.PLAYER_INFO_SCENE_LAYOUT_CHARGE = 4;
 //推广信息
 GameConstant.PROMOTION_STATUS_SUBMIT = 1; //提交
 GameConstant.PROMOTION_STATUS_CHECKING = 2; //正在审核

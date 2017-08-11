@@ -40,6 +40,8 @@ declare class BottomWnd extends eui.Skin{
 }
 declare class TopWnd extends eui.Skin{
 }
+declare class ChargeResultWnd extends eui.Skin{
+}
 declare class ChargeWnd extends eui.Skin{
 }
 declare class DiscoveryWdn extends eui.Skin{
@@ -67,6 +69,10 @@ declare class MaintWnd extends eui.Skin{
 declare class MyHSliderWnd extends eui.Skin{
 }
 declare class MyInfoWnd extends eui.Skin{
+}
+declare class PackWnd extends eui.Skin{
+}
+declare class PlayerInfoWnd extends eui.Skin{
 }
 declare class PromotionWnd1 extends eui.Skin{
 }

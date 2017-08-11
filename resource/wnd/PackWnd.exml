@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="PackWnd" width="640" height="200" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect width="590" height="200" x="25" y="0" fillColor="0xFFFFFF" ellipseWidth="30" ellipseHeight="30" scaleX="1" scaleY="1"/>
+	<e:Label id="lTitle" text="包日倒计时：" x="40" y="13" height="25" size="25" textColor="0xe84d4c" bold="true"/>
+	<e:Label id="lTime" text="" x="190" y="13" height="25" size="25" bold="true" textColor="0x484848" width="200"/>
+	<e:Group id="gPack" width="590" height="150" x="25" y="40">
+		<e:Image source="imgDay_png" x="84" y="37"/>
+		<e:Image source="imgWeek_png" x="266" y="37"/>
+		<e:Image source="imgMonth_png" x="447" y="37"/>
+		<e:Label id="lDay" text="包日" x="45" y="104" height="25" size="25" bold="true" textColor="0x808080"/>
+		<e:Image source="imgDiamond2_png" x="104" y="109"/>
+		<e:Label id="lPrice1" text="" x="133" y="104" height="25" size="25" textColor="0x808080" width="100" textAlign="left"/>
+		<e:Label id="lWeek" text="包周" x="227" y="104" height="25" size="25" bold="true" textColor="0x808080"/>
+		<e:Image source="imgDiamond2_png" x="286" y="109"/>
+		<e:Label id="lPrice2" text="" x="315" y="104" height="25" size="25" textColor="0x808080" width="100" textAlign="left"/>
+		<e:Label id="lMonth" text="包月" x="408" y="104" height="25" size="25" bold="true" textColor="0x808080"/>
+		<e:Image source="imgDiamond2_png" x="467" y="109"/>
+		<e:Label id="lPrice3" text="" x="496" y="104" height="25" size="25" textColor="0x808080" width="100" textAlign="left"/>
+		<e:Rect id="btnPackDay" width="159" height="117" x="34" y="19" anchorOffsetX="0" anchorOffsetY="0" fillAlpha="0" strokeAlpha="0"/>
+		<e:Rect id="btnPackWeek" width="159" height="117" x="217" y="19" anchorOffsetX="0" anchorOffsetY="0" fillAlpha="0" strokeAlpha="0"/>
+		<e:Rect id="btnPackMonth" width="159" height="117" x="397" y="19" anchorOffsetX="0" anchorOffsetY="0" fillAlpha="0" strokeAlpha="0"/>
+	</e:Group>
+	<e:Rect id="rectUntouch" width="590" height="150" x="25" y="70" fillColor="0xFFFFFF" ellipseWidth="50" ellipseHeight="50" scaleX="1" scaleY="1" visible="false"/>
+</e:Skin>

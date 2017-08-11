@@ -1,7 +1,7 @@
 {
 	"groups": [
 		{
-			"keys": "description_json,handle_png,off_png,on_png,button_down_png,button_up_png,checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,selected_png,border_png,header_png,thumb_pb_png,track_pb_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,track_sb_png,thumb_png,track_png,tracklight_png,yesBtn1_png,bt3_png,btnCharge_png,btnFeedback_png,btnSign_png,imgBanner1_png,imgDiamond_png,imgGame1_png,imgGame2_png,noBtn1_png,selectBtn1_png,selectGameBg1_png,slideBar1_png,yesBtn3_png,signBg_png,yesBtn2_png,btnMyInfo2_png,bottomBg_png,btnCharge1_png,btnCharge2_png,btnDiscovery1_png,btnDiscovery2_png,btnExploit1_png,btnExploit2_png,btnHall1_png,btnHall2_png,btnMyInfo1_png,btnCharge3_png,imgExploitType_png,exploitTopBg_png,imgExploitStat_png,imgArrow1_png,clock2_png,clock1_png,btnFeedback1_png,imgWeak_png,btnSelectGame_png,imgMvp_png,imgRoundNo1_png,imgRoundNo2_png,imgRoundNo3_png,imgExpShare_png,imgSign_png,imgDraw_png,deco1_png,imgDraw1_png,btnDraw_png,drawBoard_png,imgDrawGrid_png,redCircle_png,blueCircle_png,imgGoodyBag_png,btnLogout_png,imgFeedBack_png,imgJoin_png,imgTermService_png,imgApplyPromotion_png,joinBg_png,signBg2_png,imgSignStamp_png,feedBackBg_png,btnUpload_png,game1_png,game2_png,imgBanner2_png,promotionBg1_png,promotionBg2_png,promotionBg3_png,promotionBg4_png,promotionBg5_png,btnSubmit_png,text1_png,promotionBg7_png,promotionBg8_png,promotionBg9_png,left_png,right_png,tijiaoBtn_png,game2_jpg,btnSign1_png,hong_png,bai_png,sharebg_png,maintImg_png,feedBackBg1_png,feedBackBg2_png,game3_png,imgGame3_png,text2_png,btnClose_png,text3_png",
+			"keys": "handle_png,off_png,on_png,button_down_png,button_up_png,checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,selected_png,border_png,header_png,thumb_pb_png,track_pb_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,track_sb_png,thumb_png,track_png,tracklight_png,yesBtn1_png,bt3_png,btnCharge_png,btnFeedback_png,btnSign_png,imgBanner1_png,imgDiamond_png,imgGame1_png,imgGame2_png,noBtn1_png,selectBtn1_png,selectGameBg1_png,slideBar1_png,yesBtn3_png,signBg_png,yesBtn2_png,btnMyInfo2_png,bottomBg_png,btnCharge1_png,btnCharge2_png,btnDiscovery1_png,btnDiscovery2_png,btnExploit1_png,btnExploit2_png,btnHall1_png,btnHall2_png,btnMyInfo1_png,btnCharge3_png,imgExploitType_png,exploitTopBg_png,imgExploitStat_png,imgArrow1_png,clock2_png,clock1_png,btnFeedback1_png,imgWeak_png,btnSelectGame_png,imgMvp_png,imgRoundNo1_png,imgRoundNo2_png,imgRoundNo3_png,imgExpShare_png,imgSign_png,imgDraw_png,deco1_png,imgDraw1_png,btnDraw_png,drawBoard_png,imgDrawGrid_png,redCircle_png,blueCircle_png,imgGoodyBag_png,btnLogout_png,imgFeedBack_png,imgJoin_png,imgTermService_png,imgApplyPromotion_png,joinBg_png,signBg2_png,imgSignStamp_png,feedBackBg_png,btnUpload_png,game1_png,game2_png,imgBanner2_png,promotionBg1_png,promotionBg2_png,promotionBg3_png,promotionBg4_png,promotionBg5_png,btnSubmit_png,text1_png,promotionBg7_png,promotionBg8_png,promotionBg9_png,left_png,right_png,tijiaoBtn_png,game2_jpg,btnSign1_png,hong_png,bai_png,sharebg_png,maintImg_png,feedBackBg1_png,feedBackBg2_png,game3_png,imgGame3_png,text2_png,btnClose_png,text3_png,packTitle1_png,packTitle0_png,imgDiamond1_png,btnLogout1_png,imgDay_png,imgMonth_png,imgWeek_png,imgDiamond2_png,chargeResultBg_png,closeBtn_png,yesBtn4_png,btnBack_png,yesBtn5_png,jiangbei_png,jiangbei2_png",
 			"name": "preload"
 		},
 		{
@@ -10,11 +10,6 @@
 		}
 	],
 	"resources": [
-		{
-			"url": "config/description.json",
-			"type": "json",
-			"name": "description_json"
-		},
 		{
 			"url": "assets/ToggleSwitch/handle.png",
 			"type": "image",
@@ -461,149 +456,219 @@
 			"name": "load1_json"
 		},
 		{
-			"name": "game1_png",
+			"url": "assets/Imgs/game1.png",
 			"type": "image",
-			"url": "assets/Imgs/game1.png"
+			"name": "game1_png"
 		},
 		{
-			"name": "game2_png",
+			"url": "assets/Imgs/game2.png",
 			"type": "image",
-			"url": "assets/Imgs/game2.png"
+			"name": "game2_png"
 		},
 		{
-			"name": "imgBanner2_png",
+			"url": "assets/Imgs/imgBanner2.png",
 			"type": "image",
-			"url": "assets/Imgs/imgBanner2.png"
+			"name": "imgBanner2_png"
 		},
 		{
-			"name": "promotionBg1_png",
+			"url": "assets/Imgs/promotionBg1.png",
 			"type": "image",
-			"url": "assets/Imgs/promotionBg1.png"
+			"name": "promotionBg1_png"
 		},
 		{
-			"name": "promotionBg2_png",
+			"url": "assets/Imgs/promotionBg2.png",
 			"type": "image",
-			"url": "assets/Imgs/promotionBg2.png"
+			"name": "promotionBg2_png"
 		},
 		{
-			"name": "promotionBg3_png",
+			"url": "assets/Imgs/promotionBg3.png",
 			"type": "image",
-			"url": "assets/Imgs/promotionBg3.png"
+			"name": "promotionBg3_png"
 		},
 		{
-			"name": "promotionBg4_png",
+			"url": "assets/Imgs/promotionBg4.png",
 			"type": "image",
-			"url": "assets/Imgs/promotionBg4.png"
+			"name": "promotionBg4_png"
 		},
 		{
-			"name": "promotionBg5_png",
+			"url": "assets/Imgs/promotionBg5.png",
 			"type": "image",
-			"url": "assets/Imgs/promotionBg5.png"
+			"name": "promotionBg5_png"
 		},
 		{
-			"name": "btnSubmit_png",
+			"url": "assets/Imgs/btnSubmit.png",
 			"type": "image",
-			"url": "assets/Imgs/btnSubmit.png"
+			"name": "btnSubmit_png"
 		},
 		{
-			"name": "text1_png",
+			"url": "assets/Imgs/text1.png",
 			"type": "image",
-			"url": "assets/Imgs/text1.png"
+			"name": "text1_png"
 		},
 		{
-			"name": "promotionBg7_png",
+			"url": "assets/Imgs/promotionBg7.png",
 			"type": "image",
-			"url": "assets/Imgs/promotionBg7.png"
+			"name": "promotionBg7_png"
 		},
 		{
-			"name": "promotionBg8_png",
+			"url": "assets/Imgs/promotionBg8.png",
 			"type": "image",
-			"url": "assets/Imgs/promotionBg8.png"
+			"name": "promotionBg8_png"
 		},
 		{
-			"name": "promotionBg9_png",
+			"url": "assets/Imgs/promotionBg9.png",
 			"type": "image",
-			"url": "assets/Imgs/promotionBg9.png"
+			"name": "promotionBg9_png"
 		},
 		{
-			"name": "left_png",
+			"url": "assets/Imgs/left.png",
 			"type": "image",
-			"url": "assets/Imgs/left.png"
+			"name": "left_png"
 		},
 		{
-			"name": "right_png",
+			"url": "assets/Imgs/right.png",
 			"type": "image",
-			"url": "assets/Imgs/right.png"
+			"name": "right_png"
 		},
 		{
-			"name": "tijiaoBtn_png",
+			"url": "assets/Imgs/tijiaoBtn.png",
 			"type": "image",
-			"url": "assets/Imgs/tijiaoBtn.png"
+			"name": "tijiaoBtn_png"
 		},
 		{
-			"name": "game2_jpg",
+			"url": "assets/Imgs/game2.jpg",
 			"type": "image",
-			"url": "assets/Imgs/game2.jpg"
+			"name": "game2_jpg"
 		},
 		{
-			"name": "btnSign1_png",
+			"url": "assets/Imgs/btnSign1.png",
 			"type": "image",
-			"url": "assets/Imgs/btnSign1.png"
+			"name": "btnSign1_png"
 		},
 		{
-			"name": "hong_png",
+			"url": "assets/Imgs/hong.png",
 			"type": "image",
-			"url": "assets/Imgs/hong.png"
+			"name": "hong_png"
 		},
 		{
-			"name": "bai_png",
+			"url": "assets/Imgs/bai.png",
 			"type": "image",
-			"url": "assets/Imgs/bai.png"
+			"name": "bai_png"
 		},
 		{
-			"name": "sharebg_png",
+			"url": "assets/Imgs/sharebg.png",
 			"type": "image",
-			"url": "assets/Imgs/sharebg.png"
+			"name": "sharebg_png"
 		},
 		{
-			"name": "maintImg_png",
+			"url": "assets/Imgs/maintImg.png",
 			"type": "image",
-			"url": "assets/Imgs/maintImg.png"
+			"name": "maintImg_png"
 		},
 		{
-			"name": "feedBackBg1_png",
+			"url": "assets/Imgs/feedBackBg1.png",
 			"type": "image",
-			"url": "assets/Imgs/feedBackBg1.png"
+			"name": "feedBackBg1_png"
 		},
 		{
-			"name": "feedBackBg2_png",
+			"url": "assets/Imgs/feedBackBg2.png",
 			"type": "image",
-			"url": "assets/Imgs/feedBackBg2.png"
+			"name": "feedBackBg2_png"
 		},
 		{
-			"name": "game3_png",
+			"url": "assets/Imgs/game3.png",
 			"type": "image",
-			"url": "assets/Imgs/game3.png"
+			"name": "game3_png"
 		},
 		{
-			"name": "imgGame3_png",
+			"url": "assets/Imgs/imgGame3.png",
 			"type": "image",
-			"url": "assets/Imgs/imgGame3.png"
+			"name": "imgGame3_png"
 		},
 		{
-			"name": "text2_png",
+			"url": "assets/Imgs/text2.png",
 			"type": "image",
-			"url": "assets/Imgs/text2.png"
+			"name": "text2_png"
 		},
 		{
-			"name": "btnClose_png",
+			"url": "assets/Imgs/btnClose.png",
 			"type": "image",
-			"url": "assets/Imgs/btnClose.png"
+			"name": "btnClose_png"
 		},
 		{
-			"name": "text3_png",
+			"url": "assets/Imgs/text3.png",
 			"type": "image",
-			"url": "assets/Imgs/text3.png"
+			"name": "text3_png"
+		},
+		{
+			"url": "assets/Imgs/packTitle1.png",
+			"type": "image",
+			"name": "packTitle1_png"
+		},
+		{
+			"url": "assets/Imgs/packTitle0.png",
+			"type": "image",
+			"name": "packTitle0_png"
+		},
+		{
+			"url": "assets/Imgs/imgDiamond1.png",
+			"type": "image",
+			"name": "imgDiamond1_png"
+		},
+		{
+			"url": "assets/Imgs/btnLogout1.png",
+			"type": "image",
+			"name": "btnLogout1_png"
+		},
+		{
+			"url": "assets/Imgs/imgDay.png",
+			"type": "image",
+			"name": "imgDay_png"
+		},
+		{
+			"url": "assets/Imgs/imgMonth.png",
+			"type": "image",
+			"name": "imgMonth_png"
+		},
+		{
+			"url": "assets/Imgs/imgWeek.png",
+			"type": "image",
+			"name": "imgWeek_png"
+		},
+		{
+			"url": "assets/Imgs/imgDiamond2.png",
+			"type": "image",
+			"name": "imgDiamond2_png"
+		},
+		{
+			"url": "assets/Imgs/chargeResultBg.png",
+			"type": "image",
+			"name": "chargeResultBg_png"
+		},
+		{
+			"url": "assets/Imgs/closeBtn.png",
+			"type": "image",
+			"name": "closeBtn_png"
+		},
+		{
+			"url": "assets/Imgs/yesBtn4.png",
+			"type": "image",
+			"name": "yesBtn4_png"
+		},
+		{
+			"url": "assets/Imgs/btnBack.png",
+			"type": "image",
+			"name": "btnBack_png"
+		},
+		{
+			"url": "assets/Imgs/yesBtn5.png",
+			"type": "image",
+			"name": "yesBtn5_png"
+		},
+		{
+			"url": "assets/Imgs/jiangbei.png",
+			"type": "image",
+			"name": "jiangbei_png"
 		}
 	]
 }

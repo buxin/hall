@@ -24,8 +24,11 @@ var MyInfoScene = (function (_super) {
         this.dataList.dataProvider = new eui.ArrayCollection(WndManager.root.main.dataManager.SystemData.MyInfoListData);
         this.dataList.itemRenderer = MyInfoItemRender;
         this.scroller.viewport = this.dataList;
-        this.topScene = new TopScene(GameConstant.TOPSCENE_LAYOUT_MYINFO);
-        this.addChild(this.topScene);
+        // this.topScene = new TopScene(GameConstant.TOPSCENE_LAYOUT_MYINFO);
+        // this.addChild(this.topScene);
+        this.playerInfoScene = new PlayerInfoScene(GameConstant.PLAYER_INFO_SCENE_LAYOUT_MYINFO);
+        this.playerInfoScene.y = 30;
+        this.addChild(this.playerInfoScene);
         this.joinScene = new JoinScene();
         this.joinScene.visible = false;
         this.addChild(this.joinScene);
@@ -161,6 +164,10 @@ var MyInfoScene = (function (_super) {
         else {
             WndManager.root.notifyWnd.show("获取反馈失败", 0xff0000, 2, 0x0000ff, NotityWnd.MOVE_HORIZONTAL, 0, 80, MainScene.screen_width, 80, 3000);
         }
+    };
+    MyInfoScene.prototype.updateData = function () {
+        if (null != this.playerInfoScene)
+            this.playerInfoScene.updateData();
     };
     return MyInfoScene;
 }(WinBase));

@@ -43,10 +43,11 @@ var ChargeItemRender = (function (_super) {
     };
     ChargeItemRender.prototype.fundcz = function (str) {
         egret.log(str);
-        WndManager.root.main.protocol.addEventListener("onzuanshiNum", this.onzuanshiNum, this);
-        WndManager.root.main.protocol.zuanshiNum();
+        //WndManager.root.main.protocol.addEventListener("onzuanshiNum", this.onzuanshiNum, this);
+        //WndManager.root.main.protocol.zuanshiNum();
     };
     ChargeItemRender.prototype.onzuanshiNum = function () {
+        //WndManager.root.afterCharge();
     };
     return ChargeItemRender;
 }(eui.ItemRenderer));

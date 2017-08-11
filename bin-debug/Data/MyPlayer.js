@@ -4,7 +4,7 @@ var __reflect = (this && this.__reflect) || function (p, c, t) {
 var MyPlayer = (function () {
     function MyPlayer() {
         this.name = ""; //微信昵称
-        this.avatar = "http://wx.qlogo.cn/mmopen/4Wibj0GDTPWLXzWQY9lribIufj7zx3vgpvCQ3Ly2nDPT4ia7LS6ibpHS600YLF5nMo962WZYbW8YrAFYSTicTvIZoIDCgpbrRXkEs/0"; //微信头像
+        this.avatar = ""; //微信头像
         this.sex = 1;
         this.key = ""; //代替openid,存在服务器 session里
         this.diamondNum = 900000; //钻石数量
@@ -17,6 +17,10 @@ var MyPlayer = (function () {
         this.qrPath = ""; //二维码路径
         //身份
         this.roles = 0; //玩家角色 0-普通玩家 1-内部测试人员
+        //套餐数据
+        this.packstype1 = 0; //套餐类型
+        this.packLeftTime = 0; //套餐剩余时间
+        this.updatePackDataTime = 0; //更新套餐时间
         //提现记录
         this.withdrawArr = [];
         //收入记录
@@ -27,8 +31,8 @@ var MyPlayer = (function () {
         this.promotion = null;
         //    this.openId = (Math.floor(Math.random()*10000)).toString();
         //    this.name ="测试name"+ (Math.floor(Math.random()*10000)).toString();
-        this.openId = "o39HWv_i8M2U94Fv2PusU3NYmImb";
-        this.name = "静好 H5";
+        this.openId = "o39HWv_i8M2U94Fv2PusU3NYmImwvd1nvvv";
+        this.name = "test124";
     }
     Object.defineProperty(MyPlayer.prototype, "Gname", {
         get: function () {
@@ -250,6 +254,31 @@ var MyPlayer = (function () {
         }
         return null;
     };
+    MyPlayer.prototype.setUpdatePackDataTime = function () {
+        this.updatePackDataTime = (new Date()).valueOf();
+    };
+    Object.defineProperty(MyPlayer.prototype, "PackLeftTime", {
+        get: function () {
+            var curMill = (new Date()).valueOf();
+            return this.packLeftTime - (curMill - this.updatePackDataTime);
+        },
+        set: function (value) {
+            this.packLeftTime = value;
+            this.setUpdatePackDataTime();
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MyPlayer.prototype, "Packstype1", {
+        get: function () {
+            return this.packstype1;
+        },
+        set: function (value) {
+            this.packstype1 = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
     return MyPlayer;
 }());
 __reflect(MyPlayer.prototype, "MyPlayer");

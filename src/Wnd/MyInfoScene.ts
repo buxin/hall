@@ -6,7 +6,8 @@ class MyInfoScene extends WinBase{
 	private scroller: eui.Scroller;
 	private dataList: eui.List;
 
-	private topScene:TopScene;
+	//private topScene:TopScene;
+	private playerInfoScene:PlayerInfoScene;
 
 	private joinScene:JoinScene;
 
@@ -46,8 +47,11 @@ class MyInfoScene extends WinBase{
 
 		this.scroller.viewport = this.dataList;
 
-		this.topScene = new TopScene(GameConstant.TOPSCENE_LAYOUT_MYINFO);
-		this.addChild(this.topScene);
+		// this.topScene = new TopScene(GameConstant.TOPSCENE_LAYOUT_MYINFO);
+		// this.addChild(this.topScene);
+		this.playerInfoScene = new PlayerInfoScene(GameConstant.PLAYER_INFO_SCENE_LAYOUT_MYINFO);
+		this.playerInfoScene.y = 30;
+		this.addChild(this.playerInfoScene);
 
 		this.joinScene = new JoinScene();
 		this.joinScene.visible = false;
@@ -225,5 +229,11 @@ class MyInfoScene extends WinBase{
 		else{
 			WndManager.root.notifyWnd.show("获取反馈失败",0xff0000,2,0x0000ff,NotityWnd.MOVE_HORIZONTAL,0,80,MainScene.screen_width,80,3000);	
 		}
+	}
+
+	public updateData():void
+	{
+		if(null != this.playerInfoScene)
+			this.playerInfoScene.updateData();
 	}	
 }

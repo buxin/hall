@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="ChargeWnd" width="640" height="1036" xmlns:e="http://ns.egret.com/eui">
-	<e:Rect width="640" height="1036" x="0" y="0" fillColor="0xffffff"/>
-	<e:Label text="在线充值" x="260" y="24" textColor="0x000000" fontFamily="Microsoft YaHei"/>
-    <e:Scroller id="scroller" width="640" height="966" x="0" y="70" anchorOffsetX="0" anchorOffsetY="0">
+	<e:Rect width="640" height="1036" x="0" y="0" fillColor="0xf8f7f4"/>
+	<e:Rect width="640" height="60" x="0" y="0" fillColor="0xffffff"/>
+	<e:Label text="在线充值" x="260" y="18" textColor="0x000000" fontFamily="Microsoft YaHei"/>
+    <e:Scroller id="scroller" width="640" height="450" x="0" y="405" anchorOffsetX="0" anchorOffsetY="0">
 		<e:Group>
-			<e:List id="dataList" width="640" height="966" x="0" y="0" anchorOffsetX="0" anchorOffsetY="0"/>
+			<e:List id="dataList" width="640" height="450" x="0" y="0" anchorOffsetX="0" anchorOffsetY="0"/>
 		</e:Group>
 	</e:Scroller>
+	<e:Label text="    会员特权：" x="0" y="865" fontFamily="Microsoft YaHei" size="20" height="20" width="640" textColor="0x6c6c6c"/>
+	<e:Label text="    1、会员期间创局或参与游戏免费，不限局数；" x="0" y="890" textColor="0x6C6C6C" fontFamily="Microsoft YaHei" size="20" height="20" width="640"/>
+	<e:Label text="    2、日卡有效期24小时，周卡有效期7天，月卡有效期一个月；" x="0" y="915" textColor="0x6C6C6C" fontFamily="Microsoft YaHei" size="20" height="20" width="640"/>
 </e:Skin>

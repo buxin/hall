@@ -75,7 +75,7 @@ var Main = (function (_super) {
         this._jssdk.init();
         title(this.dataManager.MyPlayer.Gname);
         this.loginSuccess = true;
-        // this.enterGame();    
+        this.enterGame();
     };
     Main.prototype.onLoad = function (e) {
         egret.log("加载祝福完毕");

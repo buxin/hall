@@ -162,8 +162,9 @@ class FeedbackScene extends WinBase{
 		}
 		else
 		{
-			var rb: RegExp = /^(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57])[0-9]{8}$/;
-			if (rb.test(this.inputPhone.text) == false)
+			// var rb: RegExp = /^(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57])[0-9]{8}$/;
+			// if (rb.test(this.inputPhone.text) == false)
+			if(!MyUtils.verifyPhone(this.inputPhone.text))
 			{
 				WndManager.root.notifyWnd.show("请正确输入您的手机号",0xff0000,2,0x0000ff,NotityWnd.MOVE_HORIZONTAL,0,80,MainScene.screen_width,80,3000);
 				return;

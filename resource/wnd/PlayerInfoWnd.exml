@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="PlayerInfoWnd" width="640" height="112" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect width="590" height="112" x="25" y="0" fillColor="0xFFFFFF" ellipseWidth="30" ellipseHeight="30" scaleX="1" scaleY="1"/>
+	<e:Image id="imgAvatar" width="72" height="72" x="43" y="20" scaleX="1" scaleY="1"/>
+	<e:Rect id="rectMask" width="72" height="72" x="43" y="20" ellipseWidth="72" ellipseHeight="72" scaleX="1" scaleY="1"/>
+	<e:Label id="lName" text="" x="137" y="29" size="25" textAlign="left" verticalAlign="middle" anchorOffsetX="0" width="272" anchorOffsetY="0" height="26" scaleX="1" scaleY="1" textColor="0x5f5f5f"/>
+	<e:Label id="lDiamondNum" text="" x="287" y="70" size="20" textAlign="left" verticalAlign="middle" anchorOffsetX="0" width="200" anchorOffsetY="0" height="20" scaleX="1" scaleY="1" textColor="0xfe5c5b"/>
+	<e:Image id="imgDiamond1" source="imgDiamond1_png" x="255" y="71"/>
+	<e:Image id="imgArrow" source="imgArrow1_png" x="583" y="45"/>
+	<e:Image id="btnLogout" x="530" y="37" source="btnLogout1_png"/>
+	<e:Group id="gTitle0" width="130" height="30" x="116" y="65">
+		<e:Image id="packTitle0" source="packTitle0_png" x="23" y="6" width="19" height="17" scaleX="1" scaleY="1"/>
+		<e:Label id="textTitle0" text="普通用户" x="45" y="5" scaleX="1" scaleY="1" textColor="0xa9a9a8" size="20"/>
+	</e:Group>
+	<e:Group width="130" height="30" x="116" y="65" id="gTitle1">
+		<e:Image x="20" y="7" width="24" height="18" id="packTitle1" source="packTitle1_png" scaleX="1" scaleY="1"/>
+		<e:Label text="" x="45" y="5" scaleX="1" scaleY="1" id="textTitle1" size="20" textColor="0xfe5c5b"/>
+	</e:Group>
+	<e:Rect id="rectAvatar" width="640" height="112" x="0" y="0" fillAlpha="0"/>
+</e:Skin>

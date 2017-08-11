@@ -245,6 +245,27 @@ var MyUtils = (function () {
         var index = timeStr.lastIndexOf(":");
         return timeStr.substring(0, index);
     };
+    MyUtils.verifyPhone = function (phone) {
+        var rb = /^(13[0-9]|15[012356789]|17[35678]|18[0-9]|14[57])[0-9]{8}$/;
+        if (rb.test(phone)) {
+            return true;
+        }
+        return false;
+    };
+    MyUtils.formatDuring = function (mills) {
+        var days = Math.floor(mills / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((mills % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((mills % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((mills % (1000 * 60)) / 1000);
+        //return days + "天  " + hours + " 小时 " + minutes + " 分钟 " + seconds + " 秒 ";
+        var hoursStr = (hours < 10 ? "0" : "") + hours;
+        var minutesStr = (minutes < 10 ? "0" : "") + minutes;
+        var secondsStr = (seconds < 10 ? "0" : "") + seconds;
+        if (days > 0)
+            return days + "天  " + hoursStr + ":" + minutesStr + ":" + secondsStr;
+        else
+            return hoursStr + ":" + minutesStr + ":" + secondsStr;
+    };
     return MyUtils;
 }());
 MyUtils.by = new egret.ByteArray;

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ChargeResultWnd" width="640" height="1036" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect width="640" height="1036" x="-1" y="-3" ellipseWidth="0" ellipseHeight="0" scaleX="1" scaleY="1" fillColor="0x000000" fillAlpha="0.3"/>
+	<e:Image source="chargeResultBg_png" x="90" y="228"/>
+	<e:Label id="lTitle" text="" x="0" y="450" height="26" size="26" bold="true" textColor="0xeb6e6d" width="640" textAlign="center"/>
+	<e:Label id="lContent" text="" x="0" y="495" height="24" size="24" bold="true" width="640" textAlign="center" textColor="0xcbcbcb"/>
+	<e:Image id="imgClose" source="closeBtn_png" x="502" y="318"/>
+	<e:Rect id="btnClose" width="75" height="75" x="474" y="296" fillAlpha="0" anchorOffsetX="0" anchorOffsetY="0"/>
+	<e:Image id="yesBtn4" source="yesBtn4_png" x="91" y="559"/>
+	<e:Image id="btnBack" source="btnBack_png" x="324" y="560"/>
+	<e:Image id="yesBtn5" source="yesBtn5_png" x="189" y="570"/>
+</e:Skin>

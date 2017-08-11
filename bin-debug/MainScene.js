@@ -13,6 +13,7 @@ var MainScene = (function (_super) {
         _this.soundPlay = true; //声音是否播放
         _this.wndSlideOpenDelay = true;
         _this.timer = null;
+        _this.timerUpdate = null;
         _this.main = main;
         _this.addEventListener(egret.Event.ADDED_TO_STAGE, _this._int, _this);
         return _this;
@@ -39,6 +40,9 @@ var MainScene = (function (_super) {
         if (WndManager.root.main.protocol.defaultPage == 1) {
             this.openExploitSubScene(null);
         }
+        else if (WndManager.root.main.protocol.defaultPage == 0) {
+            this.openChargeScene(null);
+        }
         this.requestBc();
         WndManager.root.main.protocol.getSignInfo();
         this.maintscene = new MaintScene();
@@ -54,6 +58,9 @@ var MainScene = (function (_super) {
         this.timer = new egret.Timer(10000, -1);
         this.timer.addEventListener(egret.TimerEvent.TIMER, this.timerFunc, this); //启动时间
         this.timer.start();
+        this.timerUpdate = new egret.Timer(1000, -1);
+        this.timerUpdate.addEventListener(egret.TimerEvent.TIMER, this.timerUpdateFunc, this); //启动时间
+        this.timerUpdate.start();
     };
     MainScene.prototype.Onheartbeat = function () {
         if (this.bottomScene.selectId == 2) {
@@ -67,6 +74,23 @@ var MainScene = (function (_super) {
     };
     MainScene.prototype.timerFunc = function () {
         WndManager.root.main.protocol.heartbeat();
+    };
+    MainScene.prototype.timerUpdateFunc = function () {
+        var cs = WndManager.getWnd(ChargeScene);
+        if (null != cs) {
+            cs.updateData();
+        }
+        var mi = WndManager.getWnd(MyInfoScene);
+        if (null != mi) {
+            mi.updateData();
+        }
+    };
+    MainScene.prototype.afterCharge = function () {
+        egret.log("更新钻石");
+        var cs = WndManager.getWnd(ChargeScene);
+        if (null != cs) {
+            cs.afterCharge();
+        }
     };
     MainScene.prototype.initLogo = function () {
         this.logoImg = new eui.Image(RES.getRes("logo_png"));
@@ -138,6 +162,7 @@ var MainScene = (function (_super) {
         this.addEventListener("bottomClickStatus", this.setBottomClick, this);
         // this.addEventListener("onNewRoom",this.onNewRoom,this);
         this.main.protocol.addEventListener("onNewRoom", this.onNewRoom, this);
+        WndManager.root.main.protocol.addEventListener("aftercharge", this.afterCharge, this);
     };
     MainScene.prototype.setBottomClick = function (e) {
         var clicked = Boolean(e.data);
@@ -172,7 +197,7 @@ var MainScene = (function (_super) {
                 var port = jsObj.port;
                 var roomKey = jsObj.roomkey;
                 var path = jsObj.path;
-                var gameurl = jsObj.gameurl;
+                var gameurl = "http://192.168.8.125:3001/index.html"; //jsObj.gameurl;
                 if (WndManager.root.main.protocol.dataManager.MyPlayer.ghtid > 0) {
                     window.location.href = gameurl + "?ip=" + ip + "&port=" + port + "&path=" + path + "&roomkey=" + roomKey + "&key=" + WndManager.root.main.dataManager.MyPlayer.Key +
                         "&ghtid=" + WndManager.root.main.protocol.dataManager.MyPlayer.ghtid; // + "&gname="+WndManager.root.main.protocol.dataManager.MyPlayer.Gname;
@@ -183,6 +208,9 @@ var MainScene = (function (_super) {
                 }
             }
         }
+    };
+    MainScene.prototype.backGame = function () {
+        window.location.href = WndManager.root.main.protocol.serverInfo.gameweb;
     };
     //打开我的信息窗口
     MainScene.prototype.openMyInfoScene = function (e) {

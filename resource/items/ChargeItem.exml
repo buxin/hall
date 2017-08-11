@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="ChargeItem" width="640" height="100" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+<e:Skin class="ChargeItem" width="640" height="90" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
 	<w:Config id="15857b8f13e"/>
-	<e:Rect width="640" height="1" x="0" y="0" scaleX="1" scaleY="1" fillColor="0xdddddd"/>
-	<e:Rect width="640" height="1" x="0" y="99" fillColor="0xDDDDDD" scaleX="1" scaleY="1"/>
-	<e:Label id="lDiamondNum" text="" x="80" y="35" width="200" height="25" anchorOffsetX="0" fontFamily="微软雅黑" anchorOffsetY="0" verticalAlign="middle" size="25" textAlign="left" textColor="0x5f5f5f"/>
-	<e:Image source="imgDiamond_png" x="42" y="36"/>
-	<e:Image source="btnCharge3_png" x="470" y="30"/>
-	<e:Label id="lMoney" text="" x="482" y="39" size="25" height="25" fontFamily="Microsoft YaHei" anchorOffsetX="0" width="107" textAlign="center" verticalAlign="middle"/>
-	<e:Rect id="rectTouch" width="150" height="60" x="460" y="23" fillAlpha="0"/>
+	<e:Rect width="590" height="86" x="25" y="0" scaleX="1" scaleY="1" fillColor="0xffffff" ellipseWidth="30" ellipseHeight="30"/>
+	<e:Rect width="640" height="1" x="0" y="0" scaleX="1" scaleY="1" fillColor="0xdddddd" visible="false"/>
+	<e:Rect width="640" height="1" x="0" y="99" fillColor="0xDDDDDD" scaleX="1" scaleY="1" visible="false"/>
+	<e:Label id="lDiamondNum" text="" x="80" y="28" width="200" height="25" anchorOffsetX="0" fontFamily="微软雅黑" anchorOffsetY="0" verticalAlign="middle" size="25" textAlign="left" textColor="0x5f5f5f"/>
+	<e:Image source="imgDiamond_png" x="42" y="31"/>
+	<e:Image source="btnCharge3_png" x="470" y="23"/>
+	<e:Label id="lMoney" text="" x="482" y="32" size="25" height="25" fontFamily="Microsoft YaHei" anchorOffsetX="0" width="107" textAlign="center" verticalAlign="middle"/>
+	<e:Rect id="rectTouch" width="150" height="60" x="460" y="16" fillAlpha="0"/>
 </e:Skin>

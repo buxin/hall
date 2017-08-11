@@ -93,9 +93,9 @@ var JSSDK = (function (_super) {
         egret.log("分享desc:" + this.desc);
         if (this.protocol.isOurServer) {
             if (this.protocol.dataManager.MyPlayer.ghtid > 0)
-                this.link = "http://www.amo9.com/games/mar/naliqu/hall/oauth2.do?ghtid=" + this.protocol.dataManager.MyPlayer.ghtid;
+                this.link = "";
             else
-                this.link = "http://www.amo9.com/games/mar/naliqu/hall/oauth2.do";
+                this.link = "";
         }
         else {
             if (this.protocol.dataManager.MyPlayer.ghtid > 0)
@@ -110,7 +110,7 @@ var JSSDK = (function (_super) {
         //this.url = "你的后端数据入口，自行配置JSON串，后端语言不限，可以参照PHP/NET程序";
         //egret.log(location.href.split("#")[0]);
         if (this.protocol.isOurServer) {
-            this.url = "http://www.amo9.com/jssdk/sign.do?url=" + encodeURIComponent(location.href.split("#")[0]);
+            this.url = "";
         }
         else {
             this.url = "http://www.naliqu.net/jssdk/sign.do?url=" + encodeURIComponent(location.href.split("#")[0]);

@@ -22,6 +22,10 @@ var DiscoveryScene = (function (_super) {
         this.dataList.dataProvider = new eui.ArrayCollection(WndManager.root.main.dataManager.SystemData.DiscoveryData);
         this.dataList.itemRenderer = DiscoveryItemRender;
         this.scroller.viewport = this.dataList;
+        this.scroller1.scrollPolicyH = eui.ScrollPolicy.OFF;
+        this.dataList1.dataProvider = new eui.ArrayCollection(WndManager.root.main.dataManager.SystemData.PKData);
+        this.dataList1.itemRenderer = PKItemRender;
+        this.scroller1.viewport = this.dataList1;
         this.drawScene = new DrawScene(this);
         this.drawScene.visible = false;
         this.addChild(this.drawScene);
@@ -37,6 +41,7 @@ var DiscoveryScene = (function (_super) {
     };
     DiscoveryScene.prototype.agindis = function () {
         this.dataList.dataProvider = new eui.ArrayCollection(WndManager.root.main.dataManager.SystemData.DiscoveryData);
+        this.dataList1.dataProvider = new eui.ArrayCollection(WndManager.root.main.dataManager.SystemData.PKData);
     };
     return DiscoveryScene;
 }(WinBase));

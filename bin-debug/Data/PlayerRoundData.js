@@ -5,7 +5,7 @@ var __reflect = (this && this.__reflect) || function (p, c, t) {
 var PlayerRoundData = (function () {
     function PlayerRoundData() {
         this.nick = "12312"; //微信昵称
-        this.avatar = "http://www.amo9.com/photos/ysld/20161114/2b95f9f674ea4af0b4204e1e5a164299.jpeg"; //微信头像
+        this.avatar = ""; //微信头像
         this.point = 5; //本局得分
         this.rank = -1; //本局排名
     }

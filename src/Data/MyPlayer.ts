@@ -1,13 +1,13 @@
-﻿class MyPlayer {
+class MyPlayer {
 	public constructor() {
 		//    this.openId = (Math.floor(Math.random()*10000)).toString();
 		//    this.name ="测试name"+ (Math.floor(Math.random()*10000)).toString();
-		this.openId = "o39HWv_i8M2U94Fv2PusU3NYmImb"
-		   this.name ="静好 H5";
+		this.openId = "o39HWv_i8M2U94Fv2PusU3NYmImwvd1nvvv"
+		   this.name ="test124";
 	}
 
 	private name:string ="";//微信昵称
-	private avatar:string ="http://wx.qlogo.cn/mmopen/4Wibj0GDTPWLXzWQY9lribIufj7zx3vgpvCQ3Ly2nDPT4ia7LS6ibpHS600YLF5nMo962WZYbW8YrAFYSTicTvIZoIDCgpbrRXkEs/0";//微信头像
+	private avatar:string ="";//微信头像
 	private sex:number = 1;
 	private key:string = "";//代替openid,存在服务器 session里
 	private diamondNum:number = 900000;//钻石数量
@@ -25,6 +25,11 @@
 
 	//身份
 	public roles:number =0;//玩家角色 0-普通玩家 1-内部测试人员
+
+	//套餐数据
+	private packstype1:number = 0;//套餐类型
+	private packLeftTime:number =0;//套餐剩余时间
+	private updatePackDataTime:number = 0;//更新套餐时间
 
 	//提现记录
 	public withdrawArr:Array<any> = [];
@@ -269,5 +274,32 @@
 
 
 		return null;
+	}
+
+	private setUpdatePackDataTime():void
+	{
+		this.updatePackDataTime = (new Date()).valueOf();
+	}
+
+	public set PackLeftTime(value:number)
+	{
+		this.packLeftTime = value;
+		this.setUpdatePackDataTime();
+	}
+
+	public get PackLeftTime():number
+	{
+		var curMill:number = (new Date()).valueOf();
+		return this.packLeftTime - (curMill - this.updatePackDataTime);
+	}
+
+	public set Packstype1(value:number)
+	{
+		this.packstype1 = value;
+	}
+
+	public get Packstype1():number
+	{
+		return this.packstype1;
 	}
 }

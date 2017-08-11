@@ -12,6 +12,7 @@ var SystemData = (function () {
         this.myInfoListData = [{ id: 0, name: "意见反馈", imgSource: "imgFeedBack_png" }, { id: 1, name: "服务条款", imgSource: "imgTermService_png" },
             { id: 2, name: "加盟合作", imgSource: "imgJoin_png" }, { id: 3, name: "申请推广", imgSource: "imgApplyPromotion_png" }];
         this.discoveryData = [];
+        this.pkData = [];
         this.signTodayNum = 1093; //今日签到人数
         this.signInfo = [{ name: "代上帝的眼", diamondNum: 200 }, { name: "聪明的坏蛋", diamondNum: 80 },
             { name: "代上帝的眼", diamondNum: 1500 }, { name: "天下无伤", diamondNum: 100 },
@@ -29,6 +30,7 @@ var SystemData = (function () {
         this.commission = ""; //充值抽成百分比
         this.gameInfoList = []; //游戏信息
         this.gameSettingArr = null; //游戏时间设置
+        this.packData = []; //套餐数据
     }
     SystemData.prototype.analyseGameInfo = function () {
         if (null != this.gameInfoList) {
@@ -154,13 +156,39 @@ var SystemData = (function () {
                 this.discoveryData.push({ itemId: GameConstant.ITEM_DRAW, imgSource: "imgDraw_png", itemName: "抽奖", itemDesc: "海量钻石送不停"
                 });
             }
-            this.discoveryData.push({ itemId: GameConstant.ITEM_EXP_SHARE, imgSource: "imgExpShare_png", itemName: "经验分享", itemDesc: "三人行必有我师,去看看师傅吧！",
-                itemNews: [{ text: "正在研发中...", style: { "textColor": 0x585858 } }
-                ] });
+            // this.discoveryData.push({itemId:GameConstant.ITEM_EXP_SHARE,imgSource:"imgExpShare_png",itemName:"经验分享",itemDesc:"三人行必有我师,去看看师傅吧！",
+            // 	itemNews:[	{ text:"正在研发中...", style:{"textColor":0x585858}}
+            // 	]});
             return this.discoveryData;
         },
         set: function (value) {
             this.discoveryData = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(SystemData.prototype, "PKData", {
+        //比赛页面数据
+        get: function () {
+            this.pkData = [];
+            var pkId = "1";
+            var pkSubKey = 0;
+            var onlineNum = "6253";
+            var conditionNum = "64";
+            var rewardNum = "2";
+            this.pkData.push({ pkId: pkId, imgSource: "jiangbei_png",
+                itemName: [{ text: GameConstant.PK_NAME, style: { "textColor": 0x262626, "size": 30 } },
+                    { text: "  " + GameConstant.PK_SUB_NAME[pkSubKey], style: { "textColor": 0x12bf7f, "size": 24 } }],
+                itemOnlineNum: [{ text: onlineNum, style: { "textColor": 0x12bf7f } },
+                    { text: "人", style: { "textColor": 0x585858 } }],
+                itemDesc: [{ text: "第一名送", style: { "textColor": 0x585858 } },
+                    { text: rewardNum, style: { "textColor": 0xff9392 } },
+                    { text: "个奖券", style: { "textColor": 0x585858 } }],
+                itemConditionNum: [{ text: "满", style: { "textColor": 0x585858 } },
+                    { text: conditionNum, style: { "textColor": 0xff9392 } },
+                    { text: "人开", style: { "textColor": 0x585858 } }]
+            });
+            return this.pkData;
         },
         enumerable: true,
         configurable: true
@@ -206,6 +234,104 @@ var SystemData = (function () {
         configurable: true
     });
     SystemData.prototype.ongetSignNpc = function () {
+    };
+    Object.defineProperty(SystemData.prototype, "PackData", {
+        //pack data
+        get: function () {
+            return this.packData;
+        },
+        set: function (value) {
+            this.packData = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    SystemData.prototype.getPackTimeBySubType1 = function (subType1) {
+        for (var i = 0; i < this.packData.length; i++) {
+            if (null != this.packData[i]) {
+                var stype1 = Number(this.packData[i].subtype1);
+                if (subType1 == stype1)
+                    return Number(this.packData[i].param1);
+            }
+        }
+        return 0;
+    };
+    SystemData.prototype.getPackTimeStrBySubType1 = function (subType1) {
+        var time = this.getPackTimeBySubType1(subType1);
+        if (time == 0)
+            return "";
+        else
+            return "" + time;
+    };
+    SystemData.prototype.getPackNameBySubType1 = function (subType1) {
+        for (var i = 0; i < this.packData.length; i++) {
+            if (null != this.packData[i]) {
+                var stype1 = Number(this.packData[i].subtype1);
+                if (subType1 == stype1)
+                    return String(this.packData[i].name) + "用户";
+            }
+        }
+        return "普通用户";
+    };
+    SystemData.prototype.getPackShowNameBySubType1 = function (subType1) {
+        for (var i = 0; i < this.packData.length; i++) {
+            if (null != this.packData[i]) {
+                var stype1 = Number(this.packData[i].subtype1);
+                if (subType1 == stype1)
+                    return String(this.packData[i].name);
+            }
+        }
+        return "";
+    };
+    SystemData.prototype.getPackPriceStrBySubType1 = function (subType1) {
+        var price = this.getPackPriceBySubType1(subType1);
+        if (price == 0)
+            return "";
+        else
+            return "" + price;
+    };
+    SystemData.prototype.getPackPriceBySubType1 = function (subType1) {
+        for (var i = 0; i < this.packData.length; i++) {
+            if (null != this.packData[i]) {
+                var stype1 = Number(this.packData[i].subtype1);
+                if (subType1 == stype1)
+                    return Number(this.packData[i].price);
+            }
+        }
+        return 0;
+    };
+    SystemData.prototype.getPackPriceById = function (idx) {
+        for (var i = 0; i < this.packData.length; i++) {
+            if (null != this.packData[i]) {
+                var index = Number(this.packData[i].id);
+                if (idx == index)
+                    return Number(this.packData[i].price);
+            }
+        }
+        return 0;
+    };
+    SystemData.prototype.getPackShowNameById = function (idx) {
+        for (var i = 0; i < this.packData.length; i++) {
+            if (null != this.packData[i]) {
+                var index = Number(this.packData[i].id);
+                if (idx == index)
+                    return String(this.packData[i].name);
+            }
+        }
+        return "";
+    };
+    SystemData.prototype.getPackHoursById = function (idx) {
+        for (var i = 0; i < this.packData.length; i++) {
+            if (null != this.packData[i]) {
+                var index = Number(this.packData[i].id);
+                if (idx == index) {
+                    var seconds = Number(this.packData[i].param1);
+                    var hours = Math.floor(seconds / 3600);
+                    return hours;
+                }
+            }
+        }
+        return 0;
     };
     return SystemData;
 }());

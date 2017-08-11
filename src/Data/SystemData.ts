@@ -10,12 +10,13 @@ class SystemData {
 
 	// private chargeData:Array<any> = [{id:1,diamondNum:100,money:1},{id:2,diamondNum:1050,money:10},
 	// 							{id:3,diamondNum:5500,money:50},{id:4,diamondNum:13000,money:100},{id:5,diamondNum:120000,money:1000}];
-		private chargeData:Array<any> = [];//充值列表
+	private chargeData:Array<any> = [];//充值列表
 
 	private myInfoListData:Array<any> = [{id:0,name:"意见反馈",imgSource:"imgFeedBack_png"},{id:1,name:"服务条款",imgSource:"imgTermService_png"},
 								{id:2,name:"加盟合作",imgSource:"imgJoin_png"},{id:3,name:"申请推广",imgSource:"imgApplyPromotion_png"}];
 
 	private discoveryData:Array<any> = [];
+	private pkData:Array<any> = [];
 
 	private signTodayNum:number = 1093;//今日签到人数
 
@@ -40,6 +41,8 @@ class SystemData {
 	public gameInfoList: Array<GameInfo> =[];//游戏信息
 
 	public gameSettingArr:Array<GameSetting> = null;//游戏时间设置
+
+	private packData:Array<any> = [];//套餐数据
 
 	public analyseGameInfo():void
 	{
@@ -186,11 +189,38 @@ class SystemData {
 			this.discoveryData.push({itemId:GameConstant.ITEM_DRAW,imgSource:"imgDraw_png",itemName:"抽奖",itemDesc:"海量钻石送不停"
 	});
 		}
-		this.discoveryData.push({itemId:GameConstant.ITEM_EXP_SHARE,imgSource:"imgExpShare_png",itemName:"经验分享",itemDesc:"三人行必有我师,去看看师傅吧！",
-			itemNews:[	{ text:"正在研发中...", style:{"textColor":0x585858}}
-			]});
+		// this.discoveryData.push({itemId:GameConstant.ITEM_EXP_SHARE,imgSource:"imgExpShare_png",itemName:"经验分享",itemDesc:"三人行必有我师,去看看师傅吧！",
+		// 	itemNews:[	{ text:"正在研发中...", style:{"textColor":0x585858}}
+		// 	]});
 
        return this.discoveryData;
+    }
+
+	//比赛页面数据
+	public get PKData():Array<any> {
+
+		this.pkData = [];
+		var pkId:string = "1";
+		var pkSubKey = 0;
+		var onlineNum:string = "6253";
+		var conditionNum:string = "64";
+		var rewardNum:string = "2";
+		this.pkData.push({pkId:pkId,imgSource:"jiangbei_png",
+			itemName:[	{ text:GameConstant.PK_NAME, style:{"textColor":0x262626,"size":30}},
+			{ text:"  "+GameConstant.PK_SUB_NAME[pkSubKey], style:{"textColor":0x12bf7f,"size":24}}],
+
+			itemOnlineNum:[	{ text:onlineNum, style:{"textColor":0x12bf7f}},
+			{ text:"人", style:{"textColor":0x585858}}],
+
+			itemDesc:[ { text:"第一名送", style:{"textColor":0x585858}},
+			{ text:rewardNum, style:{"textColor":0xff9392}},
+			{ text:"个奖券", style:{"textColor":0x585858}}],
+
+			itemConditionNum:[ { text:"满", style:{"textColor":0x585858}},
+			{ text:conditionNum, style:{"textColor":0xff9392}},
+			{ text:"人开", style:{"textColor":0x585858}}]
+		});
+       return this.pkData;
     }
 
 	public set DiscoveryData(value:Array<any>)
@@ -244,5 +274,142 @@ class SystemData {
 	public set SignInfo(value:Array<any>)
 	{
 		this.signInfo = value;
+	}
+
+	//pack data
+	public get PackData():Array<any> {
+       return this.packData;
+    }
+
+	public set PackData(value:Array<any>)
+	{
+		this.packData = value;
+	}
+
+	public getPackTimeBySubType1(subType1:number):number
+	{
+		for(var i=0;i<this.packData.length;i++)
+		{
+			if(null != this.packData[i])
+			{
+				var stype1:number = Number(this.packData[i].subtype1);
+				if(subType1 == stype1)
+					return Number(this.packData[i].param1);
+			}
+		}
+
+		return 0;
+	}
+
+	public getPackTimeStrBySubType1(subType1:number):string
+	{
+		var time:number = this.getPackTimeBySubType1(subType1);
+		if(time == 0)
+			return "";
+		else
+			return ""+time;
+	}
+
+	public getPackNameBySubType1(subType1:number):string
+	{
+		for(var i=0;i<this.packData.length;i++)
+		{
+			if(null != this.packData[i])
+			{
+				var stype1:number = Number(this.packData[i].subtype1);
+				if(subType1 == stype1)
+					return String(this.packData[i].name)+"用户";
+			}
+		}
+
+		return "普通用户";
+	}
+
+	public getPackShowNameBySubType1(subType1:number):string
+	{
+		for(var i=0;i<this.packData.length;i++)
+		{
+			if(null != this.packData[i])
+			{
+				var stype1:number = Number(this.packData[i].subtype1);
+				if(subType1 == stype1)
+					return String(this.packData[i].name);
+			}
+		}
+
+		return "";
+	}
+
+	public getPackPriceStrBySubType1(subType1:number):string
+	{
+		var price:number = this.getPackPriceBySubType1(subType1);
+		if(price == 0)
+			return "";
+		else
+			return ""+price;
+	}
+
+	public getPackPriceBySubType1(subType1:number):number
+	{
+		for(var i=0;i<this.packData.length;i++)
+		{
+			if(null != this.packData[i])
+			{
+				var stype1:number = Number(this.packData[i].subtype1);
+				if(subType1 == stype1)
+					return Number(this.packData[i].price);
+			}
+		}
+
+		return 0;
+	}
+
+	public getPackPriceById(idx:number):number
+	{
+		for(var i=0;i<this.packData.length;i++)
+		{
+			if(null != this.packData[i])
+			{
+				var index:number = Number(this.packData[i].id);
+				if(idx == index)
+					return Number(this.packData[i].price);
+			}
+		}
+
+		return 0;
+	}
+
+	public getPackShowNameById(idx:number):string
+	{
+		for(var i=0;i<this.packData.length;i++)
+		{
+			if(null != this.packData[i])
+			{
+				var index:number = Number(this.packData[i].id);
+				if(idx == index)
+					return String(this.packData[i].name);
+			}
+		}
+
+		return "";
+	}
+
+	public getPackHoursById(idx:number):number
+	{
+		for(var i=0;i<this.packData.length;i++)
+		{
+			if(null != this.packData[i])
+			{
+				var index:number = Number(this.packData[i].id);
+				if(idx == index)
+				{
+					var seconds:number = Number(this.packData[i].param1);
+					var hours:number = Math.floor(seconds/3600);
+					return hours;
+				}
+			}
+		}
+
+		return 0;
 	}
 }

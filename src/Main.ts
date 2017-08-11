@@ -78,7 +78,7 @@ class Main extends eui.UILayer {
         //设置加载进度界面
         this.loadingView = new LoadingUI(this);
         this.stage.addChild(this.loadingView);
-
+        
         //分享
         this._jssdk = new JSSDK(this.protocol,this);
         this.stage.addChild(this._jssdk);
@@ -131,7 +131,7 @@ class Main extends eui.UILayer {
         this._jssdk.init();
         title(this.dataManager.MyPlayer.Gname);
         this.loginSuccess = true;  
-        // this.enterGame();    
+        this.enterGame();    
     }
 
     private onLoad(e:egret.Event):void
@@ -255,8 +255,7 @@ class Main extends eui.UILayer {
         //RES.getResAsync("description_json", this.startAnimation, this);
 
         this.mainScene = new MainScene(this);
-        this.addChild(this.mainScene);
-        
+        this.addChild(this.mainScene);   
     }
     /**
      * 根据name关键字创建一个Bitmap对象。name属性请参考resources/resource.json配置文件的内容。

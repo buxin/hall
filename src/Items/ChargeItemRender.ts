@@ -30,7 +30,7 @@ class ChargeItemRender extends eui.ItemRenderer{
         //充值
         	WndManager.root.main.protocol.addEventListener("Onpay", this.Onpay, this);
         WndManager.root.main.protocol.getPay(this.id);
-        this.rectTouch.touchEnabled=false;
+       this.rectTouch.touchEnabled=false;
     }
     private Onpay()
         {
@@ -44,13 +44,13 @@ class ChargeItemRender extends eui.ItemRenderer{
         }
       public fundcz(str:string){
            egret.log(str)
-        	WndManager.root.main.protocol.addEventListener("onzuanshiNum", this.onzuanshiNum, this);
+        	//WndManager.root.main.protocol.addEventListener("onzuanshiNum", this.onzuanshiNum, this);
           
-          WndManager.root.main.protocol.zuanshiNum();
+          //WndManager.root.main.protocol.zuanshiNum();
       }
 
       private onzuanshiNum(){
-          
-      }
+          //WndManager.root.afterCharge();
+      } 
     
 }

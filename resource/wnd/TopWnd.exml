@@ -4,7 +4,7 @@
 	<e:Image id="imgAvatar" width="72" height="72" x="28" y="8"/>
 	<e:Rect id="rectMask" width="72" height="72" x="28" y="8" ellipseWidth="72" ellipseHeight="72"/>
 	<e:Label id="lName" text="" x="116" y="11" size="25" textAlign="left" verticalAlign="middle" anchorOffsetX="0" width="272" anchorOffsetY="0" height="26" textColor="0x000000"/>
-	<e:Image id="imgDiamond" source="imgDiamond_png" x="116" y="53"/>
+	<e:Image id="imgDiamond" source="imgDiamond_png" x="116" y="56"/>
 	<e:Label id="lDiamondNum" text="" x="148" y="50" anchorOffsetX="0" width="322" textColor="0x000000" size="25" height="30" verticalAlign="middle" textAlign="left"/>
 	<e:Image id="btnCharge" source="btnCharge_png" x="216" y="53"/>
 	<e:Image id="btnSign" source="btnSign_png" x="443" y="23"/>

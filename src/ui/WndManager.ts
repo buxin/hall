@@ -36,7 +36,6 @@ class WndManager extends egret.Sprite {
     }
 
     public static root: MainScene;
-    
     private wins: WinBase[] = [];
     /***
      * 窗口打开 

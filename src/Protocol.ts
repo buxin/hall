@@ -45,6 +45,17 @@ class Protocol extends egret.Sprite {
              if(MyUtils.checkStringIsNotNulll(MyUtils.getMyParamer("ghtid")))
                 this.dataManager.MyPlayer.ghtid = Number(MyUtils.getMyParamer("ghtid"));
 
+                //充值跳转回游戏地址
+            // if(MyUtils.checkStringIsNotNulll(MyUtils.getMyParamer("gameweb")))
+            //  this.gameweb = decodeURIComponent(MyUtils.getMyParamer("gameweb"));
+
+             if(MyUtils.checkStringIsNotNulll(MyUtils.getMyParamer("gameweb")))
+             {
+                   var url = document.location.search;
+                   this.serverInfo.analysis(url);
+             }
+  
+
             // if(MyUtils.checkStringIsNotNulll(MyUtils.getMyParamer("gname")))
             //      this.dataManager.MyPlayer.EncodeGname = MyUtils.getMyParamer("gname");
 
@@ -52,7 +63,7 @@ class Protocol extends egret.Sprite {
 
             if(this.isOurServer)
             {
-                this.urlPrefix = "http://www.amo9.com/games/mar/naliqu/hall/";
+                this.urlPrefix = "";
             }
             else
             {
@@ -60,19 +71,23 @@ class Protocol extends egret.Sprite {
             }
 
 
-      //      this.urlPrefix = "http://192.168.1.58:8080/hall/"; 
+     //       this.urlPrefix = "http://192.168.1.58:8080/hall/"; 
      //           this.urlPrefix = "http://192.168.1.63:8080/hall/"; 
      
         }
         else{
         // this.urlPrefix = "http://192.168.1.54:8080/hall/";
-        this.urlPrefix = "http://test.naliqu.net/hall/";
+        this.urlPrefix = "http://120.27.209.57:8081/hall/";
             
         }
 
         //this.shareOpenId = "123131";
         this.qrPathPrefix =  this.urlPrefix + "qrimg/";
     }
+
+    //游戏服相关
+    //public gameweb:string = "";
+    public serverInfo:ServerInfo = new ServerInfo();
 
     public isOurServer:boolean = false;
     public jumpGametypeId:number=0;
@@ -103,7 +118,7 @@ class Protocol extends egret.Sprite {
     {   
        var url = this.urlPrefix + "checkin.do?openid=" + this.dataManager.MyPlayer.OpenId + "&nick="+this.dataManager.MyPlayer.Name
         + "&headimg="+this.dataManager.MyPlayer.Avatar + "&sex="+this.dataManager.MyPlayer.Sex;
-       console.log("enter-->"+url)
+       console.log(url)
        var urlloader = new egret.URLLoader();
         var req = new egret.URLRequest(url);
         req.method = egret.URLRequestMethod.GET;
@@ -136,7 +151,7 @@ class Protocol extends egret.Sprite {
         req.method = egret.URLRequestMethod.GET;
          var self = this;
         urlloader.addEventListener(egret.Event.COMPLETE, (e) => {
-            console.log("登陆返回-->"+e.target.data);
+            console.log(e.target.data);
          //    egret.log(e.target.data);
             
             var ret:string = e.target.data as string;
@@ -155,6 +170,9 @@ class Protocol extends egret.Sprite {
                     this.dataManager.MyPlayer.qrPath = jsObj.qrpath as string;
 
                     this.dataManager.MyPlayer.roles = Number(jsObj.roles);
+
+                    this.dataManager.MyPlayer.Packstype1 = Number(jsObj.packstype1);
+                    this.dataManager.MyPlayer.PackLeftTime = Number(jsObj.packLeftTime);
 
                     // //如果链接带过来ghtid,gname,则不更新login.do返回的ghtid,gname
                     // if(this.dataManager.MyPlayer.ghtid<=0)
@@ -175,6 +193,8 @@ class Protocol extends egret.Sprite {
                     this.dataManager.SystemData.commission=jsObj.sc.commission
 
                      this.dataManager.SystemData.ChargeData =jsObj.sc.chargeList;
+
+                     this.dataManager.SystemData.PackData = jsObj.sc.packList;
 
                      //游戏数据
                      this.dataManager.SystemData.gameInfoList = [];
@@ -566,13 +586,13 @@ class Protocol extends egret.Sprite {
     {   
         this.dataManager.SystemData.Inform =""
        var url = this.urlPrefix + "heartbeat.do?key=" + this.dataManager.MyPlayer.Key;
-       console.log(url)
+       //console.log(url)
        var urlloader = new egret.URLLoader();
         var req = new egret.URLRequest(url);
         req.method = egret.URLRequestMethod.GET;
          var self = this;
         urlloader.addEventListener(egret.Event.COMPLETE, (e) => {
-            console.log(e.target.data);
+            //console.log(e.target.data);
             
             var ret:string = e.target.data as string;
 //{"serverTime":1492188818836,"broadcastInfoClient":{"inform":"栋栋陪我去北京吧","interval":3}} 
@@ -584,9 +604,12 @@ class Protocol extends egret.Sprite {
                     this.dataManager.SystemData.Inform = jsObj.broadcastInfoClient.inform;
                         
 
-                    this.dataManager.SystemData.maintweekdays=jsObj.maintweekdays
-                    this.dataManager.SystemData.maintstarttime=jsObj.maintstarttime
-                    this.dataManager.SystemData.maintendtime=jsObj.maintendtime
+                    this.dataManager.SystemData.maintweekdays=jsObj.maintweekdays;
+                    this.dataManager.SystemData.maintstarttime=jsObj.maintstarttime;
+                    this.dataManager.SystemData.maintendtime=jsObj.maintendtime;
+
+                    // this.dataManager.MyPlayer.packstype1 = Number(jsObj.packstype1);
+                    // this.dataManager.MyPlayer.packLeftTime = Number(jsObj.packLeftTime);
 
 
                    this.isMaint = Boolean(jsObj.maint);
@@ -720,10 +743,10 @@ class Protocol extends egret.Sprite {
 
 
        //上传图片
-    public photoPathPrefix:string = "http://www.amo9.com/photos/naliqu/";;
+    public photoPathPrefix:string = "http://www.naliqu.net/photos/naliqu/";;
     //上传图片
     public onUpload( photoBase64: any): void {
-        var url = "http://www.amo9.com/wxsdk/upload.do";
+        var url = "http://www.naliqu.net/wxsdk/upload.do";
         
         var urlloader = new egret.URLLoader();
         var req = new egret.URLRequest(url);
@@ -895,6 +918,13 @@ class Protocol extends egret.Sprite {
     {   
         this.gameurl="";
        var url = this.urlPrefix + "playinfo.do?key=" + this.dataManager.MyPlayer.Key;
+
+
+        if(MyUtils.checkStringIsNotNulll(WndManager.root.main.protocol.serverInfo.gameweb))
+            url = this.urlPrefix + "playinfo.do?key=" + this.dataManager.MyPlayer.Key + "&ip="+this.serverInfo.ip
+            + "&port="+this.serverInfo.port + "&gametype="+this.serverInfo.gametype + "&roomkey="+ this.serverInfo.roomkey;
+
+
        console.log(url)
        var urlloader = new egret.URLLoader();
         var req = new egret.URLRequest(url);
@@ -909,10 +939,15 @@ class Protocol extends egret.Sprite {
                 var jsObj = JSON.parse(e.target.data);
                 if (jsObj) {
                    
-                    this.dataManager.MyPlayer.DiamondNum = Number(jsObj.jewel);
+                    var newDiamonNum:number = Number(jsObj.jewel);
 
-                   
-                    
+                    if(this.dataManager.MyPlayer.DiamondNum<newDiamonNum)
+                    {
+                        var event = new egret.Event("aftercharge");
+                        self.dispatchEvent(event);
+                    }
+
+                    this.dataManager.MyPlayer.DiamondNum = newDiamonNum;
 
                     var event = new egret.Event("onzuanshiNum");
                     self.dispatchEvent(event);
@@ -991,6 +1026,37 @@ class Protocol extends egret.Sprite {
             if(MyUtils.checkStringIsNotNulll(ret))
             {
                var event = new egret.Event("onGetChargeAddr",true,false,ret);
+                this.dispatchEvent(event);
+            }
+            
+        }, this);
+        urlloader.load(req);
+    }
+
+    //购买商品
+    
+    public shopping(goodsid:number):void
+    {
+        var url = this.urlPrefix + "shopping.do?key=" + this.dataManager.MyPlayer.Key + "&goodsid="+goodsid + "&num=1";
+
+        if(MyUtils.checkStringIsNotNulll(WndManager.root.main.protocol.serverInfo.gameweb))
+            url = this.urlPrefix + "shopping.do?key=" + this.dataManager.MyPlayer.Key + "&goodsid="+goodsid + "&num=1" + "&ip="+this.serverInfo.ip
+            + "&port="+this.serverInfo.port + "&gametype="+this.serverInfo.gametype + "&roomkey="+ this.serverInfo.roomkey;
+
+
+        console.log(url);
+        var urlloader = new egret.URLLoader();
+        var req = new egret.URLRequest(url);
+        req.method = egret.URLRequestMethod.GET;
+        var self = this;
+        urlloader.addEventListener(egret.Event.COMPLETE, (e) => {
+            console.log(e.target.data,"33");
+
+             var ret:string = e.target.data as string;
+
+            if(MyUtils.checkStringIsNotNulll(ret))
+            {
+               var event = new egret.Event("onShopping",true,false,ret);
                 this.dispatchEvent(event);
             }
             
